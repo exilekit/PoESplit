@@ -1,0 +1,69 @@
+﻿<Window x:Class="PoESplit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoESplit"
+        xmlns:clr="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Background= "#333333"
+        MinWidth="105"
+        MinHeight="70"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="Grayscale"
+        FontFamily="Arial"
+        FontSize="14"
+        Title="PoESplit">
+    <Window.Resources>
+        <ResourceDictionary>
+            <x:Static x:Key="Version" Member="local:App.kVersion"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="PathOfBuildingStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </Window.Resources>
+    <StackPanel>
+        <Grid Margin="2,2,2,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="12" Grid.Column="1" Grid.Row="0" Foreground="LightGray">
+                Version
+            </Label>
+            <Label FontSize="12" Grid.Column="2" Grid.Row="0" Foreground="LightGray">
+                <TextBlock Text="{StaticResource Version}"/>
+            </Label>            
+            <Label FontSize="12" Grid.Column="3" Grid.Row="0" Foreground="White">
+                <Hyperlink Foreground="SkyBlue" NavigateUri="https://github.com/exilekit/PoESplit/releases" RequestNavigate="Hyperlink_RequestNavigate">https://github.com/exilekit/PoESplit/releases</Hyperlink>
+            </Label>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Margin="2,0,2,0">
+            <ToggleButton x:Name="locateClient" Margin="2" Style="{StaticResource PoBToggleButton}" Foreground="Red">Locate Client.txt</ToggleButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2,0,2,2">
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
+                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Clock</TextBlock>
+            </ToggleButton>
+            <ToggleButton Margin="2"  Style="{StaticResource PoBToggleButton}">
+                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Parses</TextBlock>
+            </ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
+                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">LVL/XP</TextBlock>
+            </ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
+                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Zone</TextBlock>
+            </ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Map</ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
+                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Log</TextBlock>
+            </ToggleButton>
+        </StackPanel>
+    </StackPanel>
+</Window>
