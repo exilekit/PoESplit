@@ -16,11 +16,15 @@
                     <Grid x:Name="Grid" Background="#000000">
                         <Border x:Name="Border" BorderBrush="#7f7f7f" BorderThickness="1,1,1,1" />
                         <Grid  Margin="1"  HorizontalAlignment="Center">
-                            <ContentPresenter Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter x:Name="Content" Margin="{TemplateBinding Padding}"/>
                         </Grid>
                     </Grid>
 
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFFF"/>
+                            <Setter TargetName="Grid" Property="Background" Value="#545454"/>
+                        </Trigger>                        
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFFF"/>
                             <Setter TargetName="Grid" Property="Background" Value="#545454"/>
@@ -29,6 +33,11 @@
                             <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFFF"/>
                             <Setter TargetName="Grid" Property="Background" Value="#7f7f7f"/>
                         </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Content" Property="TextBlock.Foreground" Value="Gray"/>
+                            <Setter TargetName="Content" Property="TextBlock.TextDecorations" Value="Strikethrough"/>
+                        </Trigger>                                                
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

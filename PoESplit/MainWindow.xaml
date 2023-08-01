@@ -48,22 +48,12 @@
             <ToggleButton x:Name="locateClient" Margin="2" Style="{StaticResource PoBToggleButton}" Foreground="Red">Locate Client.txt</ToggleButton>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2,0,2,2">
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Clock</TextBlock>
-            </ToggleButton>
-            <ToggleButton Margin="2"  Style="{StaticResource PoBToggleButton}">
-                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Parses</TextBlock>
-            </ToggleButton>
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">LVL/XP</TextBlock>
-            </ToggleButton>
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Zone</TextBlock>
-            </ToggleButton>
+            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">Clock</ToggleButton>
+            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">Parses</ToggleButton>
+            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">LVL/XP</ToggleButton>
+            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">Zone</ToggleButton>
             <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Map</ToggleButton>
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Foreground="Gray" TextDecorations="Strikethrough">Log</TextBlock>
-            </ToggleButton>
+            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">Log</ToggleButton>
         </StackPanel>
     </StackPanel>
 </Window>
