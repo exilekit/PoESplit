@@ -6,25 +6,17 @@
         xmlns:local="clr-namespace:PoESplit"
         xmlns:clr="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Background= "#333333"
         MinWidth="105"
         MinHeight="70"
         ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
-        TextOptions.TextFormattingMode="Display"
-        TextOptions.TextRenderingMode="Grayscale"
-        FontFamily="Arial"
-        FontSize="14"
+        Style="{StaticResource PoBWindow}"
         Title="PoESplit">
     <Window.Resources>
         <ResourceDictionary>
             <x:Static x:Key="Version" Member="local:App.kVersion"/>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="PathOfBuildingStyle.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
     </Window.Resources>
     <StackPanel>
         <Grid Margin="2,2,2,0">
@@ -67,8 +59,7 @@
                 <TextBlock Style="{StaticResource DisableableText}">Zone</TextBlock>
             </ToggleButton>
             <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Map</ToggleButton>
-            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Log</TextBlock></ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsDebugVisible, Mode=TwoWay}">Debug</ToggleButton>
         </StackPanel>
     </StackPanel>
 </Window>

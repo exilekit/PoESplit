@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using PoESplit.ClientParser;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
@@ -13,15 +12,18 @@ namespace PoESplit
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public readonly Map fMap;
+        public readonly DebugWindow fDebug;
         LogReader fLogReader = new LogReader();
         LogEventController fLogEventController;
         private bool fIsMapVisible;
+        private bool fIsDebugVisible;
 
         public MainWindow()
         {
             this.DataContext = this;
             fLogEventController = new LogEventController(this);
             fMap = new Map(this);
+            fDebug = new DebugWindow(this);
             InitializeComponent();
 
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -86,7 +88,6 @@ namespace PoESplit
             }
         }
 
-
         public bool IsMapVisible
         {
             get
@@ -97,6 +98,19 @@ namespace PoESplit
             {
                 fIsMapVisible = value;
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs("IsMapVisible"));
+            }
+        }
+
+        public bool IsDebugVisible
+        {
+            get
+            {
+                return fIsDebugVisible;
+            }
+            set
+            {
+                fIsDebugVisible = value;
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("IsDebugVisible"));
             }
         }
 

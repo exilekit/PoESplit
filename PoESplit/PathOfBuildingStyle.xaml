@@ -1,6 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <Style TargetType="{x:Type Window}" x:Key="PoBWindow">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#333333"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
     <Style TargetType="{x:Type Label}" x:Key="PoBLabel">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
