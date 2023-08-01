@@ -38,13 +38,13 @@ namespace PoESplit
             if (fLogReader.IsOpen)
             {
                 locateClient.Foreground = Brushes.Lime;
-                locateClient.Content = "Found Client.txt";
+                locateClient.Content = "CONNECTED (click to stop)";
                 locateClient.IsChecked = true;
             }
             else
             {
                 locateClient.Foreground = Brushes.Red;
-                locateClient.Content = "Locate Client.txt";
+                locateClient.Content = "NOT CONNECTED (click to locate)";
                 locateClient.IsChecked = false;
             }
         }
