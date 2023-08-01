@@ -83,11 +83,11 @@ namespace PoESplit.ClientParser
                 {
                     MapPin mapPin = BakedData.fMapPins[actIdx][pinIdx];
 
-                    fMainWindow.fMap.SetPlayerPosition(actIdx, mapPin.X, mapPin.Y);
+                    fMainWindow.fMapWindow.SetPlayerPosition(actIdx, mapPin.X, mapPin.Y);
                 }
                 else
                 {
-                    fMainWindow.fMap.SetPlayerPosition(null, default, default);
+                    fMainWindow.fMapWindow.SetPlayerPosition(null, default, default);
                 }
 
                 // TODO: log this

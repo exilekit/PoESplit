@@ -11,8 +11,8 @@ namespace PoESplit
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        public readonly Map fMap;
-        public readonly DebugWindow fDebug;
+        public readonly MapWindow fMapWindow;
+        public readonly DebugWindow fDebugWindow;
         LogReader fLogReader = new LogReader();
         LogEventController fLogEventController;
         private bool fIsMapVisible;
@@ -22,8 +22,8 @@ namespace PoESplit
         {
             this.DataContext = this;
             fLogEventController = new LogEventController(this);
-            fMap = new Map(this);
-            fDebug = new DebugWindow(this);
+            fMapWindow = new MapWindow(this);
+            fDebugWindow = new DebugWindow(this);
             InitializeComponent();
 
             DispatcherTimer dispatcherTimer = new DispatcherTimer();

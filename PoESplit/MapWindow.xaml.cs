@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 
 namespace PoESplit
 {
-    public partial class Map : Window, INotifyPropertyChanged
+    public partial class MapWindow : Window, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private ImageSource[] fBackgroundImageSource;
@@ -24,7 +24,7 @@ namespace PoESplit
         private double fPlayerY = 200.0;
         private int fActIdx = 0;        
 
-        public Map(MainWindow mainWindow)
+        public MapWindow(MainWindow mainWindow)
         {
             fBackgroundImageSource = new ImageSource[BakedData.fMapPins.Length];
             for (int i = 0; i < fBackgroundImageSource.Length; ++i)
