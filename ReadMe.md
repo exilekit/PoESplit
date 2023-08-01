@@ -1,4 +1,4 @@
-# ![Logo](https://raw.githubusercontent.com/exilekit/PoESplit/main/MarkdownResources/ExperimentedUniqueSymbol.png) PoESplit
+# ![Logo](https://raw.githubusercontent.com/exilekit/PoESplit/main/PoESplit/MarkdownResources/ExperimentedUniqueSymbol.png) PoESplit
 
 ## About
 PoESplit is a timer program for speedrunners playing the Path of Exile campaign. It is intended to help players identify inefficiencies during the course of their run.
