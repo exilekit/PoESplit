@@ -54,10 +54,9 @@ namespace PoESplit
             if (locateClient.IsChecked == true)
             {
                 OpenFileDialog ofg = new OpenFileDialog();
-                ofg.Title = "Locate Client.txt in \"Path of Exile\\Logs\"";
-                ofg.Filter = "Path of Exile Client Log (Client.txt)|Client.txt";
+                ofg.Title = "Locate \"Client.txt\" in your Path of Exile installation (it'll be in the \"logs\" subfolder):";
+                ofg.Filter = "PoE Log|Client.txt";
                 ofg.DefaultExt = "Client.txt";
-                ofg.FileName = "Client";
 
                 bool? result = ofg.ShowDialog();
                 if (result == true)
