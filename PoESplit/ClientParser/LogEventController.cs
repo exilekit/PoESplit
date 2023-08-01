@@ -48,7 +48,7 @@ namespace PoESplit.ClientParser
             ConnectedToLine connectedToLine = ConnectedToLine.TryParse(remainder);
             if (connectedToLine != null)
             {
-                Console.WriteLine(connectedToLine);
+                fMainWindow.fDebugWindow.LogMessage($"Connected to login server");
                 return true;
             }
             else
@@ -61,9 +61,8 @@ namespace PoESplit.ClientParser
         {
             EnteredAreaLine enteredAreaLine = EnteredAreaLine.TryParse(remainder);
             if (enteredAreaLine != null)
-            {                
-                // TODO: log this event
-                //Console.WriteLine(enteredAreaLine.fArea);
+            {
+                fMainWindow.fDebugWindow.LogMessage($"You have entered \"{enteredAreaLine.fArea}\"");
                 return true;
             }
             else
@@ -90,8 +89,7 @@ namespace PoESplit.ClientParser
                     fMainWindow.fMapWindow.SetPlayerPosition(null, default, default);
                 }
 
-                // TODO: log this
-                //Console.WriteLine(generatingLevel.fArea);
+                fMainWindow.fDebugWindow.LogMessage($"Generating {generatingLevel.fArea} at area level {generatingLevel.fLevel}");
                 return true;
             }
             else
