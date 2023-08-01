@@ -12,13 +12,19 @@ namespace PoESplit.ClientParser
                 "PoeSplit",
                 "config.txt");
 
+        private readonly MainWindow fMainWindow;
         private FileStream fFileStream;
         private long fPosition;
 
         private Decoder fDecoder = Encoding.UTF8.GetDecoder();
         private LineBuilder fLineBuilder = new LineBuilder();
 
-        public LogReader()
+        public LogReader(MainWindow mainWindow)
+        {
+            fMainWindow = mainWindow;
+        }
+
+        public void TryLoadingAppDataConfig()
         {
             if (File.Exists(kConfigFile))
             {
@@ -43,13 +49,16 @@ namespace PoESplit.ClientParser
                 fFileStream.Position = fPosition;
                 fDecoder = Encoding.UTF8.GetDecoder();
                 fLineBuilder = new LineBuilder();
+                fMainWindow.fDebugWindow.LogMessage("Connected to client log");
 
                 Directory.CreateDirectory(Path.GetDirectoryName(kConfigFile));
                 File.WriteAllText(kConfigFile, path);
+
+                fMainWindow.fDebugWindow.LogMessage("Wrote client log location to %APPDATA%\\PoESplit\\config.txt");
             }
             catch(Exception e)
             {
-                // TODO: log this exception the log panel
+                fMainWindow.fDebugWindow.LogMessage(e.Message);
                 fFileStream = null;
                 fDecoder = null;
                 fLineBuilder = null;

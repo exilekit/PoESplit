@@ -13,7 +13,7 @@ namespace PoESplit
     {
         public readonly MapWindow fMapWindow;
         public readonly DebugWindow fDebugWindow;
-        LogReader fLogReader = new LogReader();
+        readonly LogReader fLogReader;
         LogEventController fLogEventController;
         private bool fIsMapVisible;
         private bool fIsDebugVisible;
@@ -21,10 +21,13 @@ namespace PoESplit
         public MainWindow()
         {
             this.DataContext = this;
+            fDebugWindow = new DebugWindow(this);
+            fLogReader = new LogReader(this);
             fLogEventController = new LogEventController(this);
             fMapWindow = new MapWindow(this);
-            fDebugWindow = new DebugWindow(this);
             InitializeComponent();
+
+            fLogReader.TryLoadingAppDataConfig();
 
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(300.0);
