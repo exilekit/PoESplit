@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:local="clr-namespace:PoESplit"
+                    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MapCommon.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MapPlayerMarker" TargetType="{x:Type Control}">
+        <Canvas d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
+            <Ellipse 
+                    Width="{Binding Source={StaticResource PlayerMarkerSize}}" 
+                    Height="{Binding Source={StaticResource PlayerMarkerSize}}"
+                    Visibility="{Binding PlayerPositionKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Stroke="Red" 
+                    StrokeThickness="5">
+                <Ellipse.Style>
+                    <Style TargetType="{x:Type Ellipse}">
+                        <Setter Property="Canvas.Left">
+                            <Setter.Value>
+                                <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
+                                    <Binding Path="PlayerX"/>
+                                    <Binding Source="{StaticResource PlayerMarkerSize}"/>
+                                </MultiBinding>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Canvas.Top">
+                            <Setter.Value>
+                                <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
+                                    <Binding Path="PlayerY"/>
+                                    <Binding Source="{StaticResource PlayerMarkerSize}"/>
+                                </MultiBinding>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Ellipse.Style>
+            </Ellipse>
+        </Canvas>
+    </ControlTemplate>
+</ResourceDictionary>

@@ -20,47 +20,17 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="MarkupTemplates\MapConnections.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPins.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\MapPlayerMarker.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Viewbox Stretch="Uniform">
         <Grid Background="Yellow">
             <Image Source="{Binding BackgroundImageSource}"/>
-
-            <Control Template="{StaticResource MapConnectionsWhite }"/>
-            <Control Template="{StaticResource MapConnectionsBlack }"/>
-            <Control Template="{StaticResource MapPins }"/>
-
-
-            <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
-                <Ellipse 
-                    Width="{Binding Source={StaticResource PlayerMarkerSize}}" 
-                    Height="{Binding Source={StaticResource PlayerMarkerSize}}"
-                    Visibility="{Binding PlayerPositionKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
-                    Stroke="Red" 
-                    StrokeThickness="5">
-                    <Ellipse.Style>
-                        <Style TargetType="{x:Type Ellipse}">
-                            <Setter Property="Canvas.Left">
-                                <Setter.Value>
-                                    <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
-                                        <Binding Path="PlayerX"/>
-                                        <Binding Source="{StaticResource PlayerMarkerSize}"/>
-                                    </MultiBinding>
-                                </Setter.Value>
-                            </Setter>
-                            <Setter Property="Canvas.Top">
-                                <Setter.Value>
-                                    <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
-                                        <Binding Path="PlayerY"/>
-                                        <Binding Source="{StaticResource PlayerMarkerSize}"/>
-                                    </MultiBinding>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Ellipse.Style>
-                </Ellipse>
-            </Canvas>
+            <Control Template="{StaticResource MapConnectionsWhite}"/>
+            <Control Template="{StaticResource MapConnectionsBlack}"/>
+            <Control Template="{StaticResource MapPins}"/>
+            <Control Template="{StaticResource MapPlayerMarker}"/>
         </Grid>
     </Viewbox>
 </Window>
