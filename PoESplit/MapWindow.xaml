@@ -17,15 +17,9 @@
         Title="Map" MouseDown="Window_MouseDown">
     <Window.Resources>
         <ResourceDictionary>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-            <local:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
-            <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
-            <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>
-            <BitmapImage x:Key="WorldPanelActivatedWaypointPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelActivatedWaypointPinIcon.png"/>
-            <clr:Double x:Key="PlayerMarkerSize">60</clr:Double>
-
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="MarkupTemplates\MapConnections.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\MapPins.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -35,59 +29,8 @@
 
             <Control Template="{StaticResource MapConnectionsWhite }"/>
             <Control Template="{StaticResource MapConnectionsBlack }"/>
+            <Control Template="{StaticResource MapPins }"/>
 
-            <ItemsControl ItemsSource="{Binding MapPins}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemContainerStyle>
-                    <Style>
-                        <Setter Property="Canvas.Left">
-                            <Setter.Value>
-                                <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
-                                    <Binding Path="X"/>
-                                    <Binding Source="{StaticResource WorldPanelVisitedPinIcon}" Path="Width"/>
-                                </MultiBinding>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Canvas.Top">
-                            <Setter.Value>
-                                <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
-                                    <Binding Path="Y"/>
-                                    <Binding Source="{StaticResource WorldPanelVisitedPinIcon}" Path="Height"/>
-                                </MultiBinding>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Image>
-                            <Image.Style>
-                                <Style TargetType="Image">
-                                    <Style.Triggers>
-                                        <MultiDataTrigger>
-                                            <MultiDataTrigger.Conditions>
-                                                <Condition Binding="{Binding IsWaypoint}" Value="False"/>
-                                                <Condition Binding="{Binding IsTown}" Value="False"/>
-                                            </MultiDataTrigger.Conditions>
-                                            <Setter Property="Source" Value="{StaticResource WorldPanelVisitedPinIcon}"/>
-                                        </MultiDataTrigger>
-                                        <DataTrigger Binding="{Binding IsWaypoint}" Value="True">
-                                            <Setter Property="Source" Value="{StaticResource WorldPanelActivatedWaypointPinIcon}"/>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding IsTown}" Value="True">
-                                            <Setter Property="Source" Value="{StaticResource WorldPanelTownPinIcon}"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
 
             <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
                 <Ellipse 
@@ -117,8 +60,6 @@
                         </Style>
                     </Ellipse.Style>
                 </Ellipse>
-
-
             </Canvas>
         </Grid>
     </Viewbox>

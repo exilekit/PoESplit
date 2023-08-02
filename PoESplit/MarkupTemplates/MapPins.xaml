@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:local="clr-namespace:PoESplit"
+                    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MapCommon.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MapPins" TargetType="{x:Type Control}">
+        <ItemsControl d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" ItemsSource="{Binding MapPins}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Canvas.Left">
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
+                                <Binding Path="X"/>
+                                <Binding Source="{StaticResource WorldPanelVisitedPinIcon}" Path="Width"/>
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Canvas.Top">
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
+                                <Binding Path="Y"/>
+                                <Binding Source="{StaticResource WorldPanelVisitedPinIcon}" Path="Height"/>
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Image>
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding IsWaypoint}" Value="False"/>
+                                            <Condition Binding="{Binding IsTown}" Value="False"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="{StaticResource WorldPanelVisitedPinIcon}"/>
+                                    </MultiDataTrigger>
+                                    <DataTrigger Binding="{Binding IsWaypoint}" Value="True">
+                                        <Setter Property="Source" Value="{StaticResource WorldPanelActivatedWaypointPinIcon}"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsTown}" Value="True">
+                                        <Setter Property="Source" Value="{StaticResource WorldPanelTownPinIcon}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ControlTemplate>
+
+</ResourceDictionary>
