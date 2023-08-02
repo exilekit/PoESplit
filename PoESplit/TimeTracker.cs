@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace PoESplit
 {
-    class TimeTracker
+    public class TimeTracker
     {
         private string fPlayerAreaCode;
         private Stopwatch fStopwatch;

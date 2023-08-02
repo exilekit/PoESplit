@@ -11,6 +11,7 @@ namespace PoESplit
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public readonly TimeTracker fTimeTracker;
         public readonly MapWindow fMapWindow;
         public readonly DebugWindow fDebugWindow;
         readonly LogReader fLogReader;

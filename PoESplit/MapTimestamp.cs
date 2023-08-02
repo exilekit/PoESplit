@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace PoESplit
 {
-    class MapTimestamp : INotifyPropertyChanged
+    public class MapTimestamp : INotifyPropertyChanged
     {
         TimeSpan fTimeSpan;
 
