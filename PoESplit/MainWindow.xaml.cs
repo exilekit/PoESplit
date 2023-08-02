@@ -22,6 +22,7 @@ namespace PoESplit
         public MainWindow()
         {
             this.DataContext = this;
+            fTimeTracker = new TimeTracker();
             fDebugWindow = new DebugWindow(this);
             fLogReader = new LogReader(this);
             fLogEventController = new LogEventController(this);

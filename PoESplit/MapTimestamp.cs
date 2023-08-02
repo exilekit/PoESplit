@@ -5,9 +5,40 @@ namespace PoESplit
 {
     public class MapTimestamp : INotifyPropertyChanged
     {
+        public const double kWidth = 100.0;
+
         TimeSpan fTimeSpan;
+        private readonly double fX;
+        private readonly double fY;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public MapTimestamp()
+        {
+
+        }
+
+        public MapTimestamp(MapPin mapPin)
+        {
+            fX = mapPin.X;
+            fY = mapPin.Y;
+        }
+
+        public double X
+        {
+            get
+            {
+                return fX;
+            }
+        }
+
+        public double Y
+        {
+            get
+            {
+                return fY;
+            }
+        }
 
         public void AddTime(TimeSpan span)
         {

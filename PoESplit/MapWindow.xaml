@@ -14,6 +14,7 @@
         Height="{Binding CanvasHeight, Mode=OneTime}"
         AllowsTransparency="True"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Style="{StaticResource PoBWindow}"
         Title="Map" MouseDown="Window_MouseDown">
     <Window.Resources>
         <ResourceDictionary>
@@ -21,6 +22,7 @@
                 <ResourceDictionary Source="MarkupTemplates\MapConnections.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPins.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPlayerMarker.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\MapPinTimestamps.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -31,6 +33,7 @@
             <Control Template="{StaticResource MapConnectionsBlack}"/>
             <Control Template="{StaticResource MapPins}"/>
             <Control Template="{StaticResource MapPlayerMarker}"/>
+            <Control Template="{StaticResource MapPinTimestamps}"/>
         </Grid>
     </Viewbox>
 </Window>

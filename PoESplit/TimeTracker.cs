@@ -23,7 +23,7 @@ namespace PoESplit
 
         public TimeTracker()
         {
-            fMapPinTimestamps = BakedData.fMapPins.Select(a => a.Select(b => new MapTimestamp()).ToList()).ToArray();
+            fMapPinTimestamps = BakedData.fMapPins.Select(a => a.Select(b => new MapTimestamp(b)).ToList()).ToArray();
         }
 
         // to reset just remake this whole object

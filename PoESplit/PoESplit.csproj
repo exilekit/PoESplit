@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddHalfMultiValueConverter.cs" />
     <Compile Include="BakedDataHelper.cs" />
     <Compile Include="TimeTracker.cs" />
     <Page Include="DebugWindow.xaml">

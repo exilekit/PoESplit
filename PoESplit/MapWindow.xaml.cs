@@ -18,6 +18,7 @@ namespace PoESplit
         private ImageSource fWorldPanelVisitedPinIcon;
         private ImageSource fWorldPanelTownPinIcon;
         private ImageSource fWorldPanelActivatedWaypointPinIcon;
+        private readonly MainWindow fMainWindow;
 
         private bool fPlayerPositionKnown;
         private double fPlayerX = 100.0;
@@ -26,6 +27,7 @@ namespace PoESplit
 
         public MapWindow(MainWindow mainWindow)
         {
+            fMainWindow = mainWindow;
             fBackgroundImageSource = new ImageSource[BakedData.fMapPins.Length];
             for (int i = 0; i < fBackgroundImageSource.Length; ++i)
             {
@@ -99,6 +101,14 @@ namespace PoESplit
             get
             {
                 return BakedData.fMapPins[fActIdx];
+            }
+        }
+
+        public ICollection<MapTimestamp> MapPinTimestamps
+        {
+            get
+            {
+                return fMainWindow.fTimeTracker.MapPinTimestamps[fActIdx];
             }
         }
 
