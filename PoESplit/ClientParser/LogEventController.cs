@@ -78,7 +78,7 @@ namespace PoESplit.ClientParser
             {
                 int actIdx;
                 int pinIdx;
-                if (TryProcessGeneratingLevelLine_ZoneArea(generatingLevel.fArea, out actIdx, out pinIdx))
+                if (BakedDataHelper.TryFindMapPinForArea(generatingLevel.fArea, out actIdx, out pinIdx))
                 {
                     MapPin mapPin = BakedData.fMapPins[actIdx][pinIdx];
 
@@ -96,21 +96,6 @@ namespace PoESplit.ClientParser
             {
                 return false;
             }
-        }
-
-        private bool TryProcessGeneratingLevelLine_ZoneArea(string area, out int actIdx, out int pinIdx)
-        {
-            for (actIdx = 0; actIdx < BakedData.fZoneToPins.Length; ++actIdx)
-            {
-                if (BakedData.fZoneToPins[actIdx].TryGetValue(area, out pinIdx))
-                {
-                    return true;
-                }
-            }
-
-            actIdx = default;
-            pinIdx = default;
-            return false;
         }
     }
 }
