@@ -30,3 +30,6 @@ It is the intent of the developer(s) of PoESplit (and its parent project, ExileK
  * Character EXP/LVL logic
    * Show what the base XP is for monsters in a zone that matches your character level, and then compare that to the base XP for monsters at the level of the zone you're actually in.
  * Vaal Side Areas cause the map to lose track of where you are.
+ * Post `1.0` release
+    * Reconsider tracking each time a user enters a map pin, and display that as a CSV
+    * Allow adjusting the font of the pin timestamps; it's currently hardcoded to "20".

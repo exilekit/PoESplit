@@ -8,10 +8,6 @@ namespace PoESplit
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (double.IsNaN((double)values[1]))
-            {
-                values[1] = 0.0;
-            }
             return (double)values[0] + ((double)values[1] / 2.0);
         }
 

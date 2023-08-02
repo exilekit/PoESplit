@@ -70,6 +70,7 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundImageSource)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasWidth)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasHeight)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
         }
 
         public bool PlayerPositionKnown

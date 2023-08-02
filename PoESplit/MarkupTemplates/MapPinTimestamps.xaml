@@ -30,7 +30,7 @@
                         <Setter.Value>
                             <MultiBinding Converter="{StaticResource AddHalfMultiValueConverter}">
                                 <Binding Path="Y"/>
-                                <Binding Path="Height" RelativeSource="{RelativeSource AncestorType={x:Type ContentPresenter}}"/>
+                                <Binding Path="Height" Source="{StaticResource WorldPanelVisitedPinIcon}"/>
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
@@ -39,10 +39,12 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Width="{Binding Source={StaticResource MapTimestampWidth}}">
-                        <Label Padding="0" Margin="0"                            
+                        <Label Padding="2" Margin="0"   
+                            Background="#99000000"                               
                             Foreground="White"
+                            FontSize="20"
                             HorizontalAlignment="Center"
-                            >AYAYAYA</Label>
+                            >2:45</Label>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
