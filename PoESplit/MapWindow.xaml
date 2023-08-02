@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Black"
-        BorderThickness="2"
+        BorderThickness="0"
         ResizeMode="CanResizeWithGrip"
         Width="{Binding CanvasWidth, Mode=OneTime}"
         Height="{Binding CanvasHeight, Mode=OneTime}"
@@ -25,7 +25,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Viewbox Stretch="Uniform">
-        <Grid Background="Yellow">
+        <Grid>
             <Image Source="{Binding BackgroundImageSource}"/>
             <Control Template="{StaticResource MapConnectionsWhite}"/>
             <Control Template="{StaticResource MapConnectionsBlack}"/>
