@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="PathOfBuildingStyle.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\PathOfBuildingStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>         
     </Application.Resources>

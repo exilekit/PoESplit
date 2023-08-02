@@ -16,70 +16,25 @@
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
         Title="Map" MouseDown="Window_MouseDown">
     <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        <local:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
-        <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
-        <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>
-        <BitmapImage x:Key="WorldPanelActivatedWaypointPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelActivatedWaypointPinIcon.png"/>
-        <clr:Double x:Key="PlayerMarkerSize">60</clr:Double>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
+            <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
+            <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>
+            <BitmapImage x:Key="WorldPanelActivatedWaypointPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelActivatedWaypointPinIcon.png"/>
+            <clr:Double x:Key="PlayerMarkerSize">60</clr:Double>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MarkupTemplates\MapConnections.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <Viewbox Stretch="Uniform">
         <Grid Background="Yellow">
             <Image Source="{Binding BackgroundImageSource}"/>
 
-            <ItemsControl ItemsSource="{Binding MapConnections}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemContainerStyle>
-                    <Style>
-                        <Setter Property="Canvas.Left" Value="{Binding X}"/>
-                        <Setter Property="Canvas.Top" Value="{Binding Y}"/>
-                    </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Line 
-                            X1="{Binding X1}"
-                            Y1="{Binding Y1}"
-                            X2="{Binding X2}"
-                            Y2="{Binding Y2}"
-                            StrokeThickness="5"
-                            Stroke="#AAFFFFFF"
-                            >
-                        </Line>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
-            <ItemsControl ItemsSource="{Binding MapConnections}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemContainerStyle>
-                    <Style>
-                        <Setter Property="Canvas.Left" Value="{Binding X}"/>
-                        <Setter Property="Canvas.Top" Value="{Binding Y}"/>
-                    </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Line 
-                            X1="{Binding X1}"
-                            Y1="{Binding Y1}"
-                            X2="{Binding X2}"
-                            Y2="{Binding Y2}"
-                            StrokeThickness="2"
-                            Stroke="#000000"                            
-                            >
-                        </Line>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <Control Template="{StaticResource MapConnectionsWhite }"/>
+            <Control Template="{StaticResource MapConnectionsBlack }"/>
 
             <ItemsControl ItemsSource="{Binding MapPins}">
                 <ItemsControl.ItemsPanel>
@@ -158,7 +113,7 @@
                                         <Binding Source="{StaticResource PlayerMarkerSize}"/>
                                     </MultiBinding>
                                 </Setter.Value>
-                            </Setter>                            
+                            </Setter>
                         </Style>
                     </Ellipse.Style>
                 </Ellipse>
