@@ -66,8 +66,9 @@ namespace PoESplit
             if (result == MessageBoxResult.Yes)
             {
                 fTimeTracker = new TimeTracker();
-                fMapWindow.RunReset();
+                fMapWindow.NotifyRunReset();
                 toggleRun.Content = "Begin Run";
+                toggleRun.IsChecked = false;
             }
         }
 

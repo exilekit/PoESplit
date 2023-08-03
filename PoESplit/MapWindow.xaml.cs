@@ -73,7 +73,7 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
         }
 
-        public void RunReset()
+        public void NotifyRunReset()
         {
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
         }

@@ -51,14 +51,15 @@ namespace PoESplit
         public void AddTime(TimeSpan span)
         {
             fTimeSpan += span;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Time)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Time)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(IsVisible)));
         }
 
         public string Time
         {
             get
             {
-                return fTimeSpan.ToString();
+                return FormatTimeSpanMinimal(fTimeSpan);
             }
         }
 
