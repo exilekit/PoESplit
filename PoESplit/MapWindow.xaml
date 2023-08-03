@@ -34,6 +34,56 @@
             <Control Template="{StaticResource MapPins}"/>
             <Control Template="{StaticResource MapPlayerMarker}"/>
             <Control Template="{StaticResource MapPinTimestamps}"/>
+
+            <Grid
+                Width="{Binding CanvasWidth}" 
+                Height="{Binding CanvasHeight}" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom">
+                <Label
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Background="#88000000"
+                    Foreground="White">
+                    Use the directional keys ← and → to manually change acts.
+                </Label>
+            </Grid>
+
+            <Grid
+                Width="{Binding CanvasWidth}" 
+                Height="{Binding CanvasHeight}" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <StackPanel 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        Act 1 - 0:52
+                    </Label>
+                </StackPanel>
+            </Grid>
+
+            <Grid
+                Width="{Binding CanvasWidth}" 
+                Height="{Binding CanvasHeight}" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+                <StackPanel 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        Campaign - 1:52:20
+                    </Label>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Viewbox>
 </Window>
