@@ -20,10 +20,8 @@ namespace PoESplit
         private ImageSource fWorldPanelActivatedWaypointPinIcon;
         private readonly MainWindow fMainWindow;
 
-        private bool fPlayerPositionKnown;
         private double fPlayerX = 100.0;
         private double fPlayerY = 200.0;
-        private int fActIdx = 0;        
 
         public MapWindow(MainWindow mainWindow)
         {
@@ -47,20 +45,14 @@ namespace PoESplit
             InitializeComponent();
         }
 
-        public void SetPlayerPosition(int? actIdx, double x, double y)
+        public void NotifyPlayerInformationChanged()
         {
-            if (actIdx.HasValue && actIdx.Value < fBackgroundImageSource.Length )
+            if (PlayerInformation.fPlayerPositionKnown)
             {
-                fActIdx = actIdx.Value;
-                fPlayerPositionKnown = true;
+                MapPin mapPin = BakedData.fMapPins[PlayerInformation.fActIdx][PlayerInformation.fPinIdx];
+                fPlayerX = mapPin.X;
+                fPlayerY = mapPin.Y;
             }
-            else
-            {
-                fPlayerPositionKnown = false;
-            }
-
-            fPlayerX = x;
-            fPlayerY = y;
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerPositionKnown)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerX)));
@@ -82,7 +74,7 @@ namespace PoESplit
         {
             get
             {
-                return fPlayerPositionKnown;
+                return PlayerInformation.fPlayerPositionKnown;
             }
         }
 
@@ -106,7 +98,7 @@ namespace PoESplit
         {
             get
             {
-                return BakedData.fMapPins[fActIdx];
+                return BakedData.fMapPins[PlayerInformation.fActIdx];
             }
         }
 
@@ -114,7 +106,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.MapPinTimestamps[fActIdx];
+                return fMainWindow.fTimeTracker.MapPinTimestamps[PlayerInformation.fActIdx];
             }
         }
 
@@ -122,9 +114,9 @@ namespace PoESplit
         {
             get
             {
-                if (fActIdx < BakedData.fConnections.Length)
+                if (PlayerInformation.fActIdx < BakedData.fConnections.Length)
                 {
-                    return BakedData.fConnections[fActIdx];
+                    return BakedData.fConnections[PlayerInformation.fActIdx];
                 }
                 else
                 {
@@ -137,7 +129,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[fActIdx].Width;
+                return fBackgroundImageSource[PlayerInformation.fActIdx].Width;
             }
 
         }
@@ -146,7 +138,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[fActIdx].Height;
+                return fBackgroundImageSource[PlayerInformation.fActIdx].Height;
             }
         }
 
@@ -154,7 +146,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[fActIdx];
+                return fBackgroundImageSource[PlayerInformation.fActIdx];
             }
         }
 

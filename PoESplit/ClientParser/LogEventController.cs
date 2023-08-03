@@ -76,20 +76,8 @@ namespace PoESplit.ClientParser
             GeneratingLevelLine generatingLevel = GeneratingLevelLine.TryParse(remainder);
             if (generatingLevel != null)
             {
-                int actIdx;
-                int pinIdx;
-                if (BakedDataHelper.TryFindMapPinForArea(generatingLevel.fArea, out actIdx, out pinIdx))
-                {
-                    fMainWindow.fTimeTracker.SetPlayerPosition(actIdx, pinIdx);
-                    MapPin mapPin = BakedData.fMapPins[actIdx][pinIdx];
-                    fMainWindow.fMapWindow.SetPlayerPosition(actIdx, mapPin.X, mapPin.Y);
-                }
-                else
-                {
-                    fMainWindow.fTimeTracker.SetPlayerPosition(null, default);
-                    fMainWindow.fMapWindow.SetPlayerPosition(null, default, default);
-                }
-
+                PlayerInformation.GeneratedLevel(generatingLevel.fArea);
+                fMainWindow.fMapWindow.NotifyPlayerInformationChanged();
                 fMainWindow.fDebugWindow.LogMessage($"Generating {generatingLevel.fArea} at area level {generatingLevel.fLevel}");
                 return true;
             }

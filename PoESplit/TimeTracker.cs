@@ -9,9 +9,6 @@ namespace PoESplit
 {
     public class TimeTracker
     {
-        private int? fPlayerActIdx;
-        private int fPlayerPinIdx;
-
         public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
 
@@ -37,12 +34,6 @@ namespace PoESplit
             }
         }
 
-        public void SetPlayerPosition(int? actIdx, int pinIdx)
-        {
-            fPlayerActIdx = actIdx;
-            fPlayerPinIdx = pinIdx;
-        }
-
         public void Tick()
         {
             if (fStopwatch.IsRunning)
@@ -51,9 +42,9 @@ namespace PoESplit
                 TimeSpan diff = currentElapsed - fLastElapsed;
                 fLastElapsed = currentElapsed;
 
-                if (fPlayerActIdx.HasValue)
+                if (PlayerInformation.fPlayerPositionKnown)
                 {
-                    fMapPinTimestamps[fPlayerActIdx.Value][fPlayerPinIdx].AddTime(diff);
+                    fMapPinTimestamps[PlayerInformation.fActIdx][PlayerInformation.fPinIdx].AddTime(diff);
                 }
                 else
                 {
