@@ -63,11 +63,15 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasWidth)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasHeight)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
         }
 
         public void NotifyRunReset()
         {
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
         }
 
         public bool PlayerPositionKnown
@@ -106,7 +110,23 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.MapPinTimestamps[PlayerInformation.fActIdx];
+                return fMainWindow.fTimeTracker.fMapPinTimestamps[PlayerInformation.fActIdx];
+            }
+        }
+
+        public MapTimestamp ActTimestamp
+        {
+            get
+            {
+                return fMainWindow.fTimeTracker.fActTimestamps[PlayerInformation.fActIdx];
+            }
+        }
+
+        public MapTimestamp CampaignTimestamp
+        {
+            get
+            {
+                return fMainWindow.fTimeTracker.fCampaignTime;
             }
         }
 

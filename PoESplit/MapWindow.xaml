@@ -55,6 +55,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <StackPanel 
+                    Orientation="Horizontal"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top">
                     <Label
@@ -62,7 +63,14 @@
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
-                        Act 1 - 0:52
+                        Act - 
+                    </Label>                    
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        <TextBlock Text="{Binding ActTimestamp.Time, Mode=OneWay}"/>
                     </Label>
                 </StackPanel>
             </Grid>
@@ -73,6 +81,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom">
                 <StackPanel 
+                    Orientation="Horizontal"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom">
                     <Label
@@ -80,8 +89,15 @@
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
-                        Campaign - 1:52:20
+                        Campaign - 
                     </Label>
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        <TextBlock Text="{Binding CampaignTimestamp.Time}"/>
+                    </Label>                    
                 </StackPanel>
             </Grid>
         </Grid>

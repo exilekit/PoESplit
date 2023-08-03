@@ -12,26 +12,17 @@ namespace PoESplit
         public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
 
-        // display all the map pin times
-        // display an act time
-        // display a total running time (shared across all the acts)
-
-        private MapTimestamp[] fActTimestamps;
-        private List<MapTimestamp>[] fMapPinTimestamps;
+        public MapTimestamp fCampaignTime;
+        public MapTimestamp[] fActTimestamps;
+        public List<MapTimestamp>[] fMapPinTimestamps;
 
         private MapTimestamp fUnknownArea = new MapTimestamp();
 
         public TimeTracker()
         {
             fMapPinTimestamps = BakedData.fMapPins.Select(a => a.Select(b => new MapTimestamp(b)).ToList()).ToArray();
-        }
-
-        public List<MapTimestamp>[] MapPinTimestamps
-        {
-            get
-            {
-                return fMapPinTimestamps;
-            }
+            fActTimestamps = BakedData.fMapPins.Select(a => new MapTimestamp()).ToArray();
+            fCampaignTime = new MapTimestamp();
         }
 
         public void Tick()
@@ -45,11 +36,14 @@ namespace PoESplit
                 if (PlayerInformation.fPlayerPositionKnown)
                 {
                     fMapPinTimestamps[PlayerInformation.fActIdx][PlayerInformation.fPinIdx].AddTime(diff);
+                    fActTimestamps[PlayerInformation.fActIdx].AddTime(diff);
                 }
                 else
                 {
                     //fUnknownArea.AddTime(diff);
                 }
+
+                fCampaignTime.AddTime(diff);
             }
         }
     }
