@@ -20,6 +20,7 @@ namespace PoESplit
         private ImageSource fWorldPanelActivatedWaypointPinIcon;
         private readonly MainWindow fMainWindow;
 
+        private int fVisibleActIdx = 0;
         private double fPlayerX = 100.0;
         private double fPlayerY = 200.0;
 
@@ -45,13 +46,18 @@ namespace PoESplit
             InitializeComponent();
         }
 
-        public void NotifyPlayerInformationChanged()
+        public void NotifyPlayerInformationChanged(bool focus)
         {
             if (PlayerInformation.fPlayerPositionKnown)
             {
                 MapPin mapPin = BakedData.fMapPins[PlayerInformation.fActIdx][PlayerInformation.fPinIdx];
                 fPlayerX = mapPin.X;
                 fPlayerY = mapPin.Y;
+
+                if (focus)
+                {
+                    fVisibleActIdx = PlayerInformation.fActIdx;
+                }
             }
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerPositionKnown)));
@@ -79,7 +85,9 @@ namespace PoESplit
         {
             get
             {
-                return PlayerInformation.fPlayerPositionKnown;
+                return 
+                    fVisibleActIdx == PlayerInformation.fActIdx &&
+                    PlayerInformation.fPlayerPositionKnown;
             }
         }
 
@@ -103,7 +111,7 @@ namespace PoESplit
         {
             get
             {
-                return BakedData.fMapPins[PlayerInformation.fActIdx];
+                return BakedData.fMapPins[fVisibleActIdx];
             }
         }
 
@@ -111,7 +119,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.fMapPinTimestamps[PlayerInformation.fActIdx];
+                return fMainWindow.fTimeTracker.fMapPinTimestamps[fVisibleActIdx];
             }
         }
 
@@ -119,7 +127,7 @@ namespace PoESplit
         {
             get
             {
-                return PlayerInformation.fActIdx + 1;
+                return fVisibleActIdx + 1;
             }
         }
 
@@ -127,7 +135,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.fActTimestamps[PlayerInformation.fActIdx];
+                return fMainWindow.fTimeTracker.fActTimestamps[fVisibleActIdx];
             }
         }
 
@@ -143,9 +151,9 @@ namespace PoESplit
         {
             get
             {
-                if (PlayerInformation.fActIdx < BakedData.fConnections.Length)
+                if (fVisibleActIdx < BakedData.fConnections.Length)
                 {
-                    return BakedData.fConnections[PlayerInformation.fActIdx];
+                    return BakedData.fConnections[fVisibleActIdx];
                 }
                 else
                 {
@@ -158,7 +166,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[PlayerInformation.fActIdx].Width;
+                return fBackgroundImageSource[fVisibleActIdx].Width;
             }
 
         }
@@ -167,7 +175,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[PlayerInformation.fActIdx].Height;
+                return fBackgroundImageSource[fVisibleActIdx].Height;
             }
         }
 
@@ -175,7 +183,7 @@ namespace PoESplit
         {
             get
             {
-                return fBackgroundImageSource[PlayerInformation.fActIdx];
+                return fBackgroundImageSource[fVisibleActIdx];
             }
         }
 
@@ -215,6 +223,20 @@ namespace PoESplit
         {
             e.Cancel = true;
             Hide();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                fVisibleActIdx = Math.Max(0, fVisibleActIdx - 1);
+                NotifyPlayerInformationChanged(false);
+            }
+            else if (e.Key == Key.Right)
+            {
+                fVisibleActIdx = Math.Min(BakedData.fMapPins.Length - 1, fVisibleActIdx + 1);
+                NotifyPlayerInformationChanged(false);
+            }
         }
     }
 }

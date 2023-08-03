@@ -15,7 +15,7 @@
         AllowsTransparency="True"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
         Style="{StaticResource PoBWindow}"
-        Title="Map" MouseDown="Window_MouseDown">
+        Title="Map" MouseDown="Window_MouseDown" KeyDown="Window_KeyDown">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
