@@ -38,13 +38,16 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="{Binding Source={StaticResource MapTimestampWidth}}">
+                    <StackPanel 
+                        Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                        Width="{Binding Source={StaticResource MapTimestampWidth}}">
                         <Label Padding="2" Margin="0"   
                             Background="#99000000"                               
                             Foreground="White"
                             FontSize="20"
-                            HorizontalAlignment="Center"
-                            >2:45</Label>
+                            HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Time}"/>
+                        </Label>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

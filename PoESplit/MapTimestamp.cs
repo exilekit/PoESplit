@@ -40,10 +40,18 @@ namespace PoESplit
             }
         }
 
+        public bool IsVisible
+        {
+            get
+            {
+                return fTimeSpan != TimeSpan.Zero;
+            }
+        }
+
         public void AddTime(TimeSpan span)
         {
             fTimeSpan += span;
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Time)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Time)));
         }
 
         public string Time

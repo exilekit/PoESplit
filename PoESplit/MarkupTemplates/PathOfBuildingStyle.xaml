@@ -31,6 +31,39 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style TargetType="{x:Type Button}" x:Key="PoBButton">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="14" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid" Background="#000000">
+                        <Border x:Name="Border" BorderBrush="#7f7f7f" BorderThickness="1,1,1,1" />
+                        <Grid Margin="1"  HorizontalAlignment="Center">
+                            <ContentPresenter x:Name="Content" Margin="10,2,10,2"/>
+                        </Grid>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFFF"/>
+                            <Setter TargetName="Grid" Property="Background" Value="#545454"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFFF"/>
+                            <Setter TargetName="Grid" Property="Background" Value="#7f7f7f"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style TargetType="{x:Type ToggleButton}" x:Key="PoBToggleButton">
         <Setter Property="Foreground" Value="White"/>

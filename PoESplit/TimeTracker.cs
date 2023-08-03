@@ -1,6 +1,7 @@
 ﻿using PoESplit.ExileKit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 
@@ -8,8 +9,10 @@ namespace PoESplit
 {
     public class TimeTracker
     {
-        private string fPlayerAreaCode;
-        private Stopwatch fStopwatch;
+        private int? fPlayerActIdx;
+        private int fPlayerPinIdx;
+
+        public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
 
         // display all the map pin times
@@ -26,17 +29,6 @@ namespace PoESplit
             fMapPinTimestamps = BakedData.fMapPins.Select(a => a.Select(b => new MapTimestamp(b)).ToList()).ToArray();
         }
 
-        // to reset just remake this whole object
-        public void Start()
-        {
-            fStopwatch.Start();
-        }
-
-        public void Stop()
-        {
-            fStopwatch.Stop();
-        }
-
         public List<MapTimestamp>[] MapPinTimestamps
         {
             get
@@ -45,9 +37,10 @@ namespace PoESplit
             }
         }
 
-        public void SetPlayerLocation(string areaCode)
+        public void SetPlayerPosition(int? actIdx, int pinIdx)
         {
-            fPlayerAreaCode = areaCode;
+            fPlayerActIdx = actIdx;
+            fPlayerPinIdx = pinIdx;
         }
 
         public void Tick()
@@ -55,19 +48,16 @@ namespace PoESplit
             if (fStopwatch.IsRunning)
             {
                 TimeSpan currentElapsed = fStopwatch.Elapsed;
-                TimeSpan diff = fLastElapsed - currentElapsed;
+                TimeSpan diff = currentElapsed - fLastElapsed;
                 fLastElapsed = currentElapsed;
 
-                int actIdx;
-                int pinIdx;
-
-                if (BakedDataHelper.TryFindMapPinForArea(fPlayerAreaCode, out actIdx, out pinIdx))
+                if (fPlayerActIdx.HasValue)
                 {
-                    fMapPinTimestamps[actIdx][pinIdx].AddTime(diff);
+                    fMapPinTimestamps[fPlayerActIdx.Value][fPlayerPinIdx].AddTime(diff);
                 }
                 else
                 {
-                    fUnknownArea.AddTime(diff);
+                    //fUnknownArea.AddTime(diff);
                 }
             }
         }

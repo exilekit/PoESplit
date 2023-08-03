@@ -73,6 +73,11 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
         }
 
+        public void RunReset()
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
+        }
+
         public bool PlayerPositionKnown
         {
             get

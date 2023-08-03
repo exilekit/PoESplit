@@ -46,20 +46,21 @@
                 Foreground="Red"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2,0,2,2">
-            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Clock</TextBlock>
+            <Button x:Name="resetRun" Margin="2" Style="{StaticResource PoBButton}">
+                <TextBlock Style="{StaticResource DisableableText}">Reset Run</TextBlock>
+            </Button>            
+            <ToggleButton x:Name="toggleRun" Margin="2" Style="{StaticResource PoBToggleButton}">
+                <TextBlock Style="{StaticResource DisableableText}">Begin Run</TextBlock>
             </ToggleButton>
+            <Button Margin="2" IsEnabled="False" Style="{StaticResource PoBButton}">
+                <TextBlock Style="{StaticResource DisableableText}">Export to Text</TextBlock>
+            </Button>
+            
             <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Parses</TextBlock>
+                <TextBlock Style="{StaticResource DisableableText}">Show Efficiency</TextBlock>
             </ToggleButton>
-            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">LVL/XP</TextBlock>
-            </ToggleButton>
-            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Zone</TextBlock>
-            </ToggleButton>
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Map</ToggleButton>
-            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsDebugVisible, Mode=TwoWay}">Debug</ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Show Map</ToggleButton>
+            <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsDebugVisible, Mode=TwoWay}">Show Debug</ToggleButton>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -80,12 +80,13 @@ namespace PoESplit.ClientParser
                 int pinIdx;
                 if (BakedDataHelper.TryFindMapPinForArea(generatingLevel.fArea, out actIdx, out pinIdx))
                 {
+                    fMainWindow.fTimeTracker.SetPlayerPosition(actIdx, pinIdx);
                     MapPin mapPin = BakedData.fMapPins[actIdx][pinIdx];
-
                     fMainWindow.fMapWindow.SetPlayerPosition(actIdx, mapPin.X, mapPin.Y);
                 }
                 else
                 {
+                    fMainWindow.fTimeTracker.SetPlayerPosition(null, default);
                     fMainWindow.fMapWindow.SetPlayerPosition(null, default, default);
                 }
 

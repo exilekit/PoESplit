@@ -11,7 +11,7 @@ namespace PoESplit
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        public readonly TimeTracker fTimeTracker;
+        public TimeTracker fTimeTracker;
         public readonly MapWindow fMapWindow;
         public readonly DebugWindow fDebugWindow;
         readonly LogReader fLogReader;
@@ -36,8 +36,39 @@ namespace PoESplit
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
 
+            toggleRun.Click += ToggleRun_Click;
+            resetRun.Click += ResetRun_Click;
             locateClient.Click += LocateClient_Click;
             UpdateLocateClientState();
+        }
+
+        private void ToggleRun_Click(object sender, RoutedEventArgs e)
+        {
+            if (toggleRun.IsChecked == true)
+            {
+                fTimeTracker.fStopwatch.Start();
+                toggleRun.Content = "Pause Run";
+            }
+            else
+            {
+                fTimeTracker.fStopwatch.Stop();
+                toggleRun.Content = "Resume Run";
+            }
+        }
+
+        private void ResetRun_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Are you sure you want to reset your run? You will lose all existing parses.",
+                "Reset run?",
+                MessageBoxButton.YesNoCancel,
+                MessageBoxImage.Exclamation);
+            if (result == MessageBoxResult.Yes)
+            {
+                fTimeTracker = new TimeTracker();
+                fMapWindow.RunReset();
+                toggleRun.Content = "Begin Run";
+            }
         }
 
         private void UpdateLocateClientState()
@@ -91,6 +122,8 @@ namespace PoESplit
                     fLogEventController.DoThing(line);
                 }
             }
+
+            fTimeTracker.Tick();
         }
 
         public bool IsMapVisible
