@@ -24,8 +24,7 @@ namespace PoESplit.ClientParser
                 SpecialNoticeLine specialNotice = SpecialNoticeLine.TryParse(ts.fRemainder);
                 if (specialNotice != null)
                 {
-                    // diagonostic print this
-                    Console.WriteLine(specialNotice.fNotice);
+                    fMainWindow.fDebugWindow.LogMessage($"Spotted notice \"{specialNotice.fNotice}\"");
                 }
                 else
                 {
