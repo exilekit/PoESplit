@@ -10,6 +10,6 @@ namespace PoESplit
 {
     public partial class App : Application
     {
-        public const string kVersion = "0.1.0.0";
+        public const string kVersion = "0.2.0.0";
     }
 }
