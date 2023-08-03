@@ -65,6 +65,7 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActNumber)));
         }
 
         public void NotifyRunReset()
@@ -111,6 +112,14 @@ namespace PoESplit
             get
             {
                 return fMainWindow.fTimeTracker.fMapPinTimestamps[PlayerInformation.fActIdx];
+            }
+        }
+
+        public int ActNumber
+        {
+            get
+            {
+                return PlayerInformation.fActIdx + 1;
             }
         }
 

@@ -63,7 +63,21 @@
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
-                        Act - 
+                        Act 
+                    </Label>
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        <TextBlock Text="{Binding ActNumber, Mode=OneWay}"/>
+                    </Label>
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Background="#88000000"
+                        Foreground="White">
+                        -
                     </Label>                    
                     <Label
                         FontSize="20"
