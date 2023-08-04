@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PoESplit
+﻿namespace PoESplit
 {
     public class MapPin
     {
@@ -12,5 +6,7 @@ namespace PoESplit
         public double Y { get; set; }
         public bool IsTown { get; set; }
         public bool IsWaypoint { get; set; }
+        public string Name { get; set; }
+        public string[] Codes { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PoESplit.ExileKit;
+using System.Linq;
 
 namespace PoESplit
 {
@@ -27,11 +28,17 @@ namespace PoESplit
 
         private static bool TryFindMapPinForArea(string area, out int actIdx, out int pinIdx)
         {
-            for (actIdx = 0; actIdx < BakedData.fZoneToPins.Length; ++actIdx)
+            if (area != null)
             {
-                if (area != null && BakedData.fZoneToPins[actIdx].TryGetValue(area, out pinIdx))
+                for (actIdx = 0; actIdx < BakedData.fMapPins.Length; ++actIdx)
                 {
-                    return true;
+                    for (pinIdx = 0; pinIdx < BakedData.fMapPins[actIdx].Count; ++pinIdx)
+                    {
+                        if(BakedData.fMapPins[actIdx][pinIdx].Codes.Contains(area))
+                        {
+                            return true;
+                        }
+                    }
                 }
             }
 
