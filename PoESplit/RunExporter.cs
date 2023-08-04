@@ -12,6 +12,10 @@ namespace PoESplit
         {
             using (StreamWriter sw = File.CreateText(path))
             {
+                // write the total campaign time
+                WriteRow(sw, new List<object>() { "Total Campaign", timeTracker.fCampaignTime.fTimeSpan });
+                WriteRow(sw, new List<object>() { });
+
                 // write the act sums
                 {
                     List<object> row = new List<object>();
@@ -21,6 +25,7 @@ namespace PoESplit
                         row.Add(timeTracker.fActTimestamps[actIdx].fTimeSpan);
                     }
                     WriteRow(sw, row);
+                    WriteRow(sw, new List<object>() { });
                 }
 
                 // write the map pins
