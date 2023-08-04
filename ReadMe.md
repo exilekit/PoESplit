@@ -29,6 +29,9 @@ It is the intent of the developer(s) of PoESplit (and its parent project, ExileK
    * When a tracked character levels, it becomes top of the list, and is the assumed character.
  * Character EXP/LVL logic
    * Show what the base XP is for monsters in a zone that matches your character level, and then compare that to the base XP for monsters at the level of the zone you're actually in.
+ * Refactor `MapTimestamp`
+    * It has a public field `fTimestamp` and a public property `Time`, so that XAML and the CSV exporter can each format it differently.
+    * Make `fTimestamp` private, make `Time` property return a `TimeSpan`, and add formatter to XAML markup.
  * Vaal Side Areas cause the map to lose track of where you are.
  * Post `1.0` release
     * Reconsider tracking each time a user enters a map pin, and display that as a CSV

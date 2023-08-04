@@ -52,8 +52,8 @@
             <ToggleButton x:Name="toggleRun" Margin="2" Style="{StaticResource PoBToggleButton}">
                 <TextBlock Style="{StaticResource DisableableText}">Begin Run</TextBlock>
             </ToggleButton>
-            <Button Margin="2" IsEnabled="False" Style="{StaticResource PoBButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Export to Text</TextBlock>
+            <Button x:Name="exportCSV" Margin="2" Style="{StaticResource PoBButton}">
+                <TextBlock Style="{StaticResource DisableableText}">Export to CSV</TextBlock>
             </Button>
             
             <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">

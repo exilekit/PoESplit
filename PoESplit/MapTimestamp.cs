@@ -7,7 +7,7 @@ namespace PoESplit
     {
         public const double kWidth = 100.0;
 
-        TimeSpan fTimeSpan;
+        public TimeSpan fTimeSpan;
         private readonly double fX;
         private readonly double fY;
 

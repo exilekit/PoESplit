@@ -39,7 +39,21 @@ namespace PoESplit
             toggleRun.Click += ToggleRun_Click;
             resetRun.Click += ResetRun_Click;
             locateClient.Click += LocateClient_Click;
+            exportCSV.Click += ExportCSV_Click;
             UpdateLocateClientState();
+        }
+
+        private void ExportCSV_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Export run to CSV";
+            sfd.Filter = "CSV|*.csv";
+            sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            bool? result = sfd.ShowDialog();
+            if (result == true)
+            {
+                RunExporter.Export(sfd.FileName, fTimeTracker);
+            }
         }
 
         private void ToggleRun_Click(object sender, RoutedEventArgs e)
