@@ -61,7 +61,7 @@
     </ApplicationDefinition>
     <Compile Include="AddHalfMultiValueConverter.cs" />
     <Compile Include="PlayerInformation.cs" />
-    <Compile Include="RunExporter.cs" />
+    <Compile Include="CsvExporter.cs" />
     <Compile Include="TimeTracker.cs" />
     <Page Include="DebugWindow.xaml">
       <SubType>Designer</SubType>

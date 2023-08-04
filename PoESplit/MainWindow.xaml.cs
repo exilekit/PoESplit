@@ -52,7 +52,7 @@ namespace PoESplit
             bool? result = sfd.ShowDialog();
             if (result == true)
             {
-                RunExporter.Export(sfd.FileName, fTimeTracker);
+                CsvExporter.Export(sfd.FileName, fTimeTracker);
             }
         }
 
