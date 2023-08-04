@@ -63,6 +63,7 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerPositionKnown)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerX)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerY)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerPinName)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPins)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapConnections)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundImageSource)));
@@ -104,6 +105,21 @@ namespace PoESplit
             get
             {
                 return fPlayerY;
+            }
+        }
+
+        public string PlayerPinName
+        {
+            get
+            {
+                if (PlayerInformation.fPlayerPositionKnown && fVisibleActIdx == PlayerInformation.fActIdx)
+                {
+                    return BakedData.fMapPins[PlayerInformation.fActIdx][PlayerInformation.fPinIdx].Name;
+                }
+                else
+                {
+                    return string.Empty;
+                }
             }
         }
 

@@ -114,6 +114,25 @@
                     </Label>                    
                 </StackPanel>
             </Grid>
+
+            <Grid
+                Width="{Binding CanvasWidth}" 
+                Height="{Binding CanvasHeight}" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top">
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top">
+                    <Label
+                        FontSize="20"
+                        HorizontalAlignment="Right"
+                        Background="#88000000"
+                        Foreground="White">
+                        <TextBlock Text="{Binding PlayerPinName}"/>
+                    </Label>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Viewbox>
 </Window>
