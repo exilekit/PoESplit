@@ -1,5 +1,6 @@
 ﻿using PoESplit.ExileKit;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -11,29 +12,50 @@ namespace PoESplit
         {
             using (StreamWriter sw = File.CreateText(path))
             {
-                for (int actIdx = 0; actIdx < BakedData.fMapPins.Length; ++actIdx)
+                // write the act sums
                 {
-                    WriteAct(sw, $"Act {actIdx + 1}", timeTracker.fActTimestamps[actIdx]);
-
-                    for (int pinIdx = 0; pinIdx < BakedData.fMapPins[actIdx].Count(); ++pinIdx)
+                    List<object> row = new List<object>();
+                    for (int actIdx = 0; actIdx < BakedData.fMapPins.Length; ++actIdx)
                     {
-                        WriteMapPin(sw, BakedData.fMapPins[actIdx][pinIdx].Name, timeTracker.fMapPinTimestamps[actIdx][pinIdx]);
+                        row.Add($"Act {actIdx + 1}");
+                        row.Add(timeTracker.fActTimestamps[actIdx].fTimeSpan);
                     }
+                    WriteRow(sw, row);
+                }
+
+                // write the map pins
+                {
+                    int pinIdx = 0;
+                    bool rowHadData;
+                    do
+                    {
+                        rowHadData = false;
+                        List<object> row = new List<object>();
+
+                        for (int actIdx = 0; actIdx < BakedData.fMapPins.Length; ++actIdx)
+                        {
+                            if (pinIdx < BakedData.fMapPins[actIdx].Count)
+                            {
+                                row.Add(BakedData.fMapPins[actIdx][pinIdx].Name);
+                                row.Add(timeTracker.fMapPinTimestamps[actIdx][pinIdx].fTimeSpan);
+                                rowHadData = true;
+                            }
+                            else
+                            {
+                                row.Add(string.Empty);
+                                row.Add(string.Empty);
+                            }
+                        }
+                        WriteRow(sw, row);
+
+                        pinIdx++;
+                    }
+                    while (rowHadData);
                 }
             }
         }
 
-        private static void WriteAct(StreamWriter sw, string act, MapTimestamp time)
-        {
-            WriteRow(sw, act, time.fTimeSpan);
-        }
-
-        private static void WriteMapPin(StreamWriter sw, string pinName, MapTimestamp time)
-        {
-            WriteRow(sw, string.Empty, string.Empty, pinName, time.fTimeSpan);
-        }
-
-        private static void WriteRow(StreamWriter sw, params object[] cells)
+        private static void WriteRow(StreamWriter sw, List<object> cells)
         {
             sw.WriteLine(string.Join(",", cells.Select(w => FormatCellValue(w))));
         }
