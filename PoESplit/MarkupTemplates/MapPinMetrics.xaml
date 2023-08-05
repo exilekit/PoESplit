@@ -8,8 +8,8 @@
         <ResourceDictionary Source="MapCommon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="MapPinTimestamps" TargetType="{x:Type Control}">
-        <ItemsControl d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" ItemsSource="{Binding MapPinTimestamps}">
+    <ControlTemplate x:Key="MapPinMetrics" TargetType="{x:Type Control}">
+        <ItemsControl d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" ItemsSource="{Binding MapPinMetrics}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>

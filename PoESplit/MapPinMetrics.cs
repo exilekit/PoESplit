@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace PoESplit
 {
-    public class MapTimestamp : INotifyPropertyChanged
+    public class MapPinMetrics : INotifyPropertyChanged
     {
         public const double kWidth = 100.0;
 
@@ -13,12 +13,12 @@ namespace PoESplit
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MapTimestamp()
+        public MapPinMetrics()
         {
 
         }
 
-        public MapTimestamp(MapPin mapPin)
+        public MapPinMetrics(MapPin mapPin)
         {
             fX = mapPin.X;
             fY = mapPin.Y;

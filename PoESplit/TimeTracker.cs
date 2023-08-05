@@ -12,17 +12,17 @@ namespace PoESplit
         public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
 
-        public MapTimestamp fCampaignTime;
-        public MapTimestamp[] fActTimestamps;
-        public List<MapTimestamp>[] fMapPinTimestamps;
+        public MapPinMetrics fCampaignTime;
+        public MapPinMetrics[] fActTimestamps;
+        public List<MapPinMetrics>[] fMapPinMetrics;
 
-        private MapTimestamp fUnknownArea = new MapTimestamp();
+        private MapPinMetrics fUnknownArea = new MapPinMetrics();
 
         public TimeTracker()
         {
-            fMapPinTimestamps = BakedData.fMapPins.Select(a => a.Select(b => new MapTimestamp(b)).ToList()).ToArray();
-            fActTimestamps = BakedData.fMapPins.Select(a => new MapTimestamp()).ToArray();
-            fCampaignTime = new MapTimestamp();
+            fMapPinMetrics = BakedData.fMapPins.Select(a => a.Select(b => new MapPinMetrics(b)).ToList()).ToArray();
+            fActTimestamps = BakedData.fMapPins.Select(a => new MapPinMetrics()).ToArray();
+            fCampaignTime = new MapPinMetrics();
         }
 
         public void Tick()
@@ -35,7 +35,7 @@ namespace PoESplit
 
                 if (PlayerInformation.fPlayerPositionKnown)
                 {
-                    fMapPinTimestamps[PlayerInformation.fActIdx][PlayerInformation.fPinIdx].AddTime(diff);
+                    fMapPinMetrics[PlayerInformation.fActIdx][PlayerInformation.fPinIdx].AddTime(diff);
                     fActTimestamps[PlayerInformation.fActIdx].AddTime(diff);
                 }
                 else

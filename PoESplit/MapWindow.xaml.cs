@@ -69,7 +69,7 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundImageSource)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasWidth)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CanvasHeight)));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinMetrics)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActNumber)));
@@ -77,7 +77,7 @@ namespace PoESplit
 
         public void NotifyRunReset()
         {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinTimestamps)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinMetrics)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
         }
@@ -131,11 +131,11 @@ namespace PoESplit
             }
         }
 
-        public ICollection<MapTimestamp> MapPinTimestamps
+        public ICollection<MapPinMetrics> MapPinMetrics
         {
             get
             {
-                return fMainWindow.fTimeTracker.fMapPinTimestamps[fVisibleActIdx];
+                return fMainWindow.fTimeTracker.fMapPinMetrics[fVisibleActIdx];
             }
         }
 
@@ -147,7 +147,7 @@ namespace PoESplit
             }
         }
 
-        public MapTimestamp ActTimestamp
+        public MapPinMetrics ActTimestamp
         {
             get
             {
@@ -155,7 +155,7 @@ namespace PoESplit
             }
         }
 
-        public MapTimestamp CampaignTimestamp
+        public MapPinMetrics CampaignTimestamp
         {
             get
             {

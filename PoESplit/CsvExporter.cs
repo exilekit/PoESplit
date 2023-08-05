@@ -45,7 +45,7 @@ namespace PoESplit
                                 if (pinIdx < BakedData.fMapPins[actIdx].Count)
                                 {
                                     row.Add(BakedData.fMapPins[actIdx][pinIdx].Name);
-                                    row.Add(timeTracker.fMapPinTimestamps[actIdx][pinIdx].fTimeSpan);
+                                    row.Add(timeTracker.fMapPinMetrics[actIdx][pinIdx].fTimeSpan);
                                     rowHadData = true;
                                 }
                                 else
