@@ -24,7 +24,14 @@ namespace PoESplit
         {
             fX = mapPin.X;
             fY = mapPin.Y;
-            fLevel = "Lvl " + string.Join("/", mapPin.Areas.Select(w => w.Level));
+            if (mapPin.IsTown)
+            {
+                fLevel = "Town";
+            }
+            else
+            {
+                fLevel = "Lvl " + string.Join("/", mapPin.Areas.Select(w => w.Level));
+            }
         }
 
         public string Level
