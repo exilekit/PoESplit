@@ -34,7 +34,7 @@ namespace PoESplit
                 {
                     for (pinIdx = 0; pinIdx < BakedData.fMapPins[actIdx].Count; ++pinIdx)
                     {
-                        if(BakedData.fMapPins[actIdx][pinIdx].Codes.Contains(area))
+                        if(BakedData.fMapPins[actIdx][pinIdx].Areas.Any(w => w.Code == area))
                         {
                             return true;
                         }

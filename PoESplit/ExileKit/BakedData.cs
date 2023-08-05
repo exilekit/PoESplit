@@ -175,174 +175,726 @@ namespace PoESplit.ExileKit
 		{
 			new List<MapPin>()
 			{
-				new MapPin() { X = 264, Y = 405, Name = "Lioneye's Watch", IsTown = true, IsWaypoint = true, Codes = new string[]{"1_1_town"} },
-				new MapPin() { X = 244, Y = 486, Name = "The Twilight Strand", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_1"} },
-				new MapPin() { X = 285, Y = 346, Name = "The Coast", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_2"} },
-				new MapPin() { X = 325, Y = 375, Name = "The Tidal Island", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_2a"} },
-				new MapPin() { X = 314, Y = 300, Name = "The Mud Flats", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_3"} },
-				new MapPin() { X = 283, Y = 231, Name = "The Fetid Pool", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_3a"} },
-				new MapPin() { X = 426, Y = 279, Name = "The Flooded Depths", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_4_0"} },
-				new MapPin() { X = 371, Y = 247, Name = "The Submerged Passage", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_4_1"} },
-				new MapPin() { X = 419, Y = 211, Name = "The Ledge", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_5"} },
-				new MapPin() { X = 324, Y = 161, Name = "The Climb", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_6"} },
-				new MapPin() { X = 305, Y = 68, Name = "The Prison", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_7_1", "1_1_7_2"} },
-				new MapPin() { X = 385, Y = 68, Name = "Prisoner's Gate", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_8"} },
-				new MapPin() { X = 480, Y = 158, Name = "The Ship Graveyard", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_9"} },
-				new MapPin() { X = 470, Y = 107, Name = "The Ship Graveyard Cave", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_1_9a"} },
-				new MapPin() { X = 626, Y = 117, Name = "Merveil's Caverns", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_1_11_1", "1_1_11_2"} },
+				new MapPin()
+				{
+					X = 264, Y = 405, Name = "Lioneye's Watch", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_town", Experience = 297, Level = 13 }}
+				},
+				new MapPin()
+				{
+					X = 244, Y = 486, Name = "The Twilight Strand", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_1", Experience = 20, Level = 1 }}
+				},
+				new MapPin()
+				{
+					X = 285, Y = 346, Name = "The Coast", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_2", Experience = 20, Level = 2 }}
+				},
+				new MapPin()
+				{
+					X = 325, Y = 375, Name = "The Tidal Island", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_2a", Experience = 25, Level = 3 }}
+				},
+				new MapPin()
+				{
+					X = 314, Y = 300, Name = "The Mud Flats", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_3", Experience = 38, Level = 4 }}
+				},
+				new MapPin()
+				{
+					X = 283, Y = 231, Name = "The Fetid Pool", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_3a", Experience = 51, Level = 5 }}
+				},
+				new MapPin()
+				{
+					X = 426, Y = 279, Name = "The Flooded Depths", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_4_0", Experience = 67, Level = 6 }}
+				},
+				new MapPin()
+				{
+					X = 371, Y = 247, Name = "The Submerged Passage", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_4_1", Experience = 51, Level = 5 }}
+				},
+				new MapPin()
+				{
+					X = 419, Y = 211, Name = "The Ledge", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_5", Experience = 67, Level = 6 }}
+				},
+				new MapPin()
+				{
+					X = 324, Y = 161, Name = "The Climb", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_6", Experience = 88, Level = 7 }}
+				},
+				new MapPin()
+				{
+					X = 305, Y = 68, Name = "The Prison", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_7_1", Experience = 113, Level = 8 }, new MapWorldArea(){ Code = "1_1_7_2", Experience = 141, Level = 9 }}
+				},
+				new MapPin()
+				{
+					X = 385, Y = 68, Name = "Prisoner's Gate", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_8", Experience = 173, Level = 10 }}
+				},
+				new MapPin()
+				{
+					X = 480, Y = 158, Name = "The Ship Graveyard", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_9", Experience = 211, Level = 11 }}
+				},
+				new MapPin()
+				{
+					X = 470, Y = 107, Name = "The Ship Graveyard Cave", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_9a", Experience = 250, Level = 12 }}
+				},
+				new MapPin()
+				{
+					X = 626, Y = 117, Name = "Merveil's Caverns", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_1_11_1", Experience = 250, Level = 12 }, new MapWorldArea(){ Code = "1_1_11_2", Experience = 297, Level = 13 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 528, Y = 313, Name = "The Forest Encampment", IsTown = true, IsWaypoint = true, Codes = new string[]{"1_2_town"} },
-				new MapPin() { X = 574, Y = 400, Name = "The Southern Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_1"} },
-				new MapPin() { X = 574, Y = 267, Name = "The Old Fields", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_2"} },
-				new MapPin() { X = 530, Y = 218, Name = "The Den", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_2a"} },
-				new MapPin() { X = 615, Y = 196, Name = "The Crossroads", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_3"} },
-				new MapPin() { X = 745, Y = 275, Name = "The Crypt", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_5_1", "1_2_5_2"} },
-				new MapPin() { X = 540, Y = 122, Name = "The Chamber of Sins", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_6_1", "1_2_6_2"} },
-				new MapPin() { X = 641, Y = 121, Name = "The Broken Bridge", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_4"} },
-				new MapPin() { X = 411, Y = 340, Name = "The Riverways", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_7"} },
-				new MapPin() { X = 259, Y = 183, Name = "The Northern Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_8"} },
-				new MapPin() { X = 221, Y = 288, Name = "The Western Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_9"} },
-				new MapPin() { X = 248, Y = 334, Name = "The Weaver's Chambers", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_10"} },
-				new MapPin() { X = 318, Y = 220, Name = "The Vaal Ruins", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_11"} },
-				new MapPin() { X = 355, Y = 270, Name = "The Wetlands", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_12"} },
-				new MapPin() { X = 196, Y = 215, Name = "The Dread Thicket", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_13"} },
-				new MapPin() { X = 144, Y = 91, Name = "The Caverns", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_2_14_2", "1_2_14_3"} },
-				new MapPin() { X = 680, Y = 265, Name = "The Fellshrine Ruins", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_2_15"} },
+				new MapPin()
+				{
+					X = 528, Y = 313, Name = "The Forest Encampment", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_town", Experience = 1013, Level = 23 }}
+				},
+				new MapPin()
+				{
+					X = 574, Y = 400, Name = "The Southern Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_1", Experience = 297, Level = 13 }}
+				},
+				new MapPin()
+				{
+					X = 574, Y = 267, Name = "The Old Fields", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_2", Experience = 347, Level = 14 }}
+				},
+				new MapPin()
+				{
+					X = 530, Y = 218, Name = "The Den", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_2a", Experience = 402, Level = 15 }}
+				},
+				new MapPin()
+				{
+					X = 615, Y = 196, Name = "The Crossroads", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_3", Experience = 402, Level = 15 }}
+				},
+				new MapPin()
+				{
+					X = 745, Y = 275, Name = "The Crypt", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_5_1", Experience = 526, Level = 17 }, new MapWorldArea(){ Code = "1_2_5_2", Experience = 596, Level = 18 }}
+				},
+				new MapPin()
+				{
+					X = 540, Y = 122, Name = "The Chamber of Sins", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_6_1", Experience = 402, Level = 15 }, new MapWorldArea(){ Code = "1_2_6_2", Experience = 461, Level = 16 }}
+				},
+				new MapPin()
+				{
+					X = 641, Y = 121, Name = "The Broken Bridge", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_4", Experience = 461, Level = 16 }}
+				},
+				new MapPin()
+				{
+					X = 411, Y = 340, Name = "The Riverways", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_7", Experience = 402, Level = 15 }}
+				},
+				new MapPin()
+				{
+					X = 259, Y = 183, Name = "The Northern Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_8", Experience = 831, Level = 21 }}
+				},
+				new MapPin()
+				{
+					X = 221, Y = 288, Name = "The Western Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_9", Experience = 526, Level = 17 }}
+				},
+				new MapPin()
+				{
+					X = 248, Y = 334, Name = "The Weaver's Chambers", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_10", Experience = 596, Level = 18 }}
+				},
+				new MapPin()
+				{
+					X = 318, Y = 220, Name = "The Vaal Ruins", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_11", Experience = 748, Level = 20 }}
+				},
+				new MapPin()
+				{
+					X = 355, Y = 270, Name = "The Wetlands", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_12", Experience = 668, Level = 19 }}
+				},
+				new MapPin()
+				{
+					X = 196, Y = 215, Name = "The Dread Thicket", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_13", Experience = 831, Level = 21 }}
+				},
+				new MapPin()
+				{
+					X = 144, Y = 91, Name = "The Caverns", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_14_2", Experience = 921, Level = 22 }, new MapWorldArea(){ Code = "1_2_14_3", Experience = 1013, Level = 23 }}
+				},
+				new MapPin()
+				{
+					X = 680, Y = 265, Name = "The Fellshrine Ruins", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_2_15", Experience = 461, Level = 16 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 461, Y = 369, Name = "The Sarn Encampment", IsTown = true, IsWaypoint = true, Codes = new string[]{"1_3_town"} },
-				new MapPin() { X = 662, Y = 381, Name = "The City of Sarn", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_1"} },
-				new MapPin() { X = 652, Y = 309, Name = "The Slums", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_3_2"} },
-				new MapPin() { X = 714, Y = 309, Name = "The Crematorium", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_3_1"} },
-				new MapPin() { X = 589, Y = 185, Name = "The Marketplace", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_5"} },
-				new MapPin() { X = 652, Y = 168, Name = "The Catacombs", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_3_6"} },
-				new MapPin() { X = 478, Y = 140, Name = "The Battlefront", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_7"} },
-				new MapPin() { X = 556, Y = 97, Name = "The Solaris Temple Level 1", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_8_1"} },
-				new MapPin() { X = 503, Y = 61, Name = "The Solaris Temple Level 2", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_8_2"} },
-				new MapPin() { X = 394, Y = 118, Name = "The Docks", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_9"} },
-				new MapPin() { X = 616, Y = 252, Name = "The Sewers", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_10_1"} },
-				new MapPin() { X = 295, Y = 178, Name = "The Ebony Barracks", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_13"} },
-				new MapPin() { X = 188, Y = 169, Name = "The Lunaris Temple", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_14_1", "1_3_14_2"} },
-				new MapPin() { X = 262, Y = 129, Name = "The Imperial Gardens", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_15"} },
-				new MapPin() { X = 217, Y = 98, Name = "The Library", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_17_1", "1_3_17_2"} },
-				new MapPin() { X = 285, Y = 76, Name = "The Sceptre of God", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_3_18_1", "1_3_18_2"} },
+				new MapPin()
+				{
+					X = 461, Y = 369, Name = "The Sarn Encampment", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_town", Experience = 2235, Level = 33 }}
+				},
+				new MapPin()
+				{
+					X = 662, Y = 381, Name = "The City of Sarn", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_1", Experience = 1013, Level = 23 }}
+				},
+				new MapPin()
+				{
+					X = 652, Y = 309, Name = "The Slums", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_2", Experience = 1113, Level = 24 }}
+				},
+				new MapPin()
+				{
+					X = 714, Y = 309, Name = "The Crematorium", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_3_1", Experience = 1216, Level = 25 }}
+				},
+				new MapPin()
+				{
+					X = 589, Y = 185, Name = "The Marketplace", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_5", Experience = 1325, Level = 26 }}
+				},
+				new MapPin()
+				{
+					X = 652, Y = 168, Name = "The Catacombs", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_6", Experience = 1437, Level = 27 }}
+				},
+				new MapPin()
+				{
+					X = 478, Y = 140, Name = "The Battlefront", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_7", Experience = 1437, Level = 27 }}
+				},
+				new MapPin()
+				{
+					X = 556, Y = 97, Name = "The Solaris Temple Level 1", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_8_1", Experience = 1437, Level = 27 }}
+				},
+				new MapPin()
+				{
+					X = 503, Y = 61, Name = "The Solaris Temple Level 2", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_8_2", Experience = 1560, Level = 28 }}
+				},
+				new MapPin()
+				{
+					X = 394, Y = 118, Name = "The Docks", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_9", Experience = 1685, Level = 29 }}
+				},
+				new MapPin()
+				{
+					X = 616, Y = 252, Name = "The Sewers", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_10_1", Experience = 1325, Level = 26 }}
+				},
+				new MapPin()
+				{
+					X = 295, Y = 178, Name = "The Ebony Barracks", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_13", Experience = 1685, Level = 29 }}
+				},
+				new MapPin()
+				{
+					X = 188, Y = 169, Name = "The Lunaris Temple", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_14_1", Experience = 1685, Level = 29 }, new MapWorldArea(){ Code = "1_3_14_2", Experience = 1812, Level = 30 }}
+				},
+				new MapPin()
+				{
+					X = 262, Y = 129, Name = "The Imperial Gardens", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_15", Experience = 1812, Level = 30 }}
+				},
+				new MapPin()
+				{
+					X = 217, Y = 98, Name = "The Library", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_17_1", Experience = 1812, Level = 30 }, new MapWorldArea(){ Code = "1_3_17_2", Experience = 1950, Level = 31 }}
+				},
+				new MapPin()
+				{
+					X = 285, Y = 76, Name = "The Sceptre of God", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_3_18_1", Experience = 2089, Level = 32 }, new MapWorldArea(){ Code = "1_3_18_2", Experience = 2235, Level = 33 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 610, Y = 370, Name = "Highgate", IsTown = true, IsWaypoint = true, Codes = new string[]{"1_4_town"} },
-				new MapPin() { X = 749, Y = 477, Name = "The Aqueduct", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_4_1"} },
-				new MapPin() { X = 315, Y = 518, Name = "The Dried Lake", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_2"} },
-				new MapPin() { X = 555, Y = 275, Name = "The Mines", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_3_1", "1_4_3_2"} },
-				new MapPin() { X = 474, Y = 236, Name = "The Crystal Veins", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_4_3_3"} },
-				new MapPin() { X = 292, Y = 344, Name = "Kaom's Dream", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_4_1"} },
-				new MapPin() { X = 196, Y = 289, Name = "Kaom's Stronghold", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_4_4_3"} },
-				new MapPin() { X = 534, Y = 144, Name = "Daresso's Dream", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_5_1"} },
-				new MapPin() { X = 464, Y = 90, Name = "The Grand Arena", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_4_5_2"} },
-				new MapPin() { X = 372, Y = 194, Name = "The Belly of the Beast", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_6_1", "1_4_6_2"} },
-				new MapPin() { X = 280, Y = 144, Name = "The Harvest", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_4_6_3"} },
-				new MapPin() { X = 729, Y = 154, Name = "The Ascent", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_4_7"} },
+				new MapPin()
+				{
+					X = 610, Y = 370, Name = "Highgate", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_town", Experience = 3407, Level = 40 }}
+				},
+				new MapPin()
+				{
+					X = 749, Y = 477, Name = "The Aqueduct", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_1", Experience = 2235, Level = 33 }}
+				},
+				new MapPin()
+				{
+					X = 315, Y = 518, Name = "The Dried Lake", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_2", Experience = 2386, Level = 34 }}
+				},
+				new MapPin()
+				{
+					X = 555, Y = 275, Name = "The Mines", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_3_1", Experience = 2386, Level = 34 }, new MapWorldArea(){ Code = "1_4_3_2", Experience = 2543, Level = 35 }}
+				},
+				new MapPin()
+				{
+					X = 474, Y = 236, Name = "The Crystal Veins", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_3_3", Experience = 2705, Level = 36 }}
+				},
+				new MapPin()
+				{
+					X = 292, Y = 344, Name = "Kaom's Dream", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_4_1", Experience = 2873, Level = 37 }}
+				},
+				new MapPin()
+				{
+					X = 196, Y = 289, Name = "Kaom's Stronghold", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_4_3", Experience = 3045, Level = 38 }}
+				},
+				new MapPin()
+				{
+					X = 534, Y = 144, Name = "Daresso's Dream", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_5_1", Experience = 2873, Level = 37 }}
+				},
+				new MapPin()
+				{
+					X = 464, Y = 90, Name = "The Grand Arena", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_5_2", Experience = 3045, Level = 38 }}
+				},
+				new MapPin()
+				{
+					X = 372, Y = 194, Name = "The Belly of the Beast", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_6_1", Experience = 3045, Level = 38 }, new MapWorldArea(){ Code = "1_4_6_2", Experience = 3227, Level = 39 }}
+				},
+				new MapPin()
+				{
+					X = 280, Y = 144, Name = "The Harvest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_6_3", Experience = 3407, Level = 40 }}
+				},
+				new MapPin()
+				{
+					X = 729, Y = 154, Name = "The Ascent", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_4_7", Experience = 3407, Level = 40 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 164, Y = 285, Name = "Overseer's Tower", IsTown = true, IsWaypoint = true, Codes = new string[]{"1_5_town"} },
-				new MapPin() { X = 75, Y = 298, Name = "The Slave Pens", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_1"} },
-				new MapPin() { X = 230, Y = 350, Name = "The Control Blocks", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_5_2"} },
-				new MapPin() { X = 406, Y = 224, Name = "Oriath Square", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_3"} },
-				new MapPin() { X = 406, Y = 224, Name = "The Ruined Square", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_3b"} },
-				new MapPin() { X = 720, Y = 440, Name = "The Templar Courts", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_4"} },
-				new MapPin() { X = 720, Y = 440, Name = "The Torched Courts", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_5_4b"} },
-				new MapPin() { X = 660, Y = 505, Name = "The Chamber of Innocence", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_5"} },
-				new MapPin() { X = 687, Y = 150, Name = "The Ossuary", IsTown = false, IsWaypoint = false, Codes = new string[]{"1_5_6"} },
-				new MapPin() { X = 326, Y = 418, Name = "The Reliquary", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_7"} },
-				new MapPin() { X = 340, Y = 130, Name = "The Cathedral Rooftop", IsTown = false, IsWaypoint = true, Codes = new string[]{"1_5_8"} },
+				new MapPin()
+				{
+					X = 164, Y = 285, Name = "Overseer's Tower", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_town", Experience = 4415, Level = 45 }}
+				},
+				new MapPin()
+				{
+					X = 75, Y = 298, Name = "The Slave Pens", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_1", Experience = 3597, Level = 41 }}
+				},
+				new MapPin()
+				{
+					X = 230, Y = 350, Name = "The Control Blocks", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_2", Experience = 3597, Level = 41 }}
+				},
+				new MapPin()
+				{
+					X = 406, Y = 224, Name = "Oriath Square", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_3", Experience = 3796, Level = 42 }}
+				},
+				new MapPin()
+				{
+					X = 406, Y = 224, Name = "The Ruined Square", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_3b", Experience = 4203, Level = 44 }}
+				},
+				new MapPin()
+				{
+					X = 720, Y = 440, Name = "The Templar Courts", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_4", Experience = 3796, Level = 42 }}
+				},
+				new MapPin()
+				{
+					X = 720, Y = 440, Name = "The Torched Courts", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_4b", Experience = 4203, Level = 44 }}
+				},
+				new MapPin()
+				{
+					X = 660, Y = 505, Name = "The Chamber of Innocence", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_5", Experience = 3993, Level = 43 }}
+				},
+				new MapPin()
+				{
+					X = 687, Y = 150, Name = "The Ossuary", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_6", Experience = 4203, Level = 44 }}
+				},
+				new MapPin()
+				{
+					X = 326, Y = 418, Name = "The Reliquary", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_7", Experience = 4203, Level = 44 }}
+				},
+				new MapPin()
+				{
+					X = 340, Y = 130, Name = "The Cathedral Rooftop", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_8", Experience = 4415, Level = 45 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 195, Y = 475, Name = "Lioneye's Watch", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_6_town"} },
-				new MapPin() { X = 176, Y = 520, Name = "The Twilight Strand", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_1"} },
-				new MapPin() { X = 200, Y = 420, Name = "The Coast", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_2"} },
-				new MapPin() { X = 240, Y = 450, Name = "The Tidal Island", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_3"} },
-				new MapPin() { X = 235, Y = 380, Name = "The Mud Flats", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_4"} },
-				new MapPin() { X = 180, Y = 345, Name = "The Karui Fortress", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_5"} },
-				new MapPin() { X = 176, Y = 265, Name = "The Ridge", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_6"} },
-				new MapPin() { X = 210, Y = 200, Name = "The Prison", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_7_1", "2_6_7_2"} },
-				new MapPin() { X = 270, Y = 200, Name = "Prisoner's Gate", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_8"} },
-				new MapPin() { X = 280, Y = 150, Name = "The Western Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_9"} },
-				new MapPin() { X = 370, Y = 180, Name = "The Riverways", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_10"} },
-				new MapPin() { X = 350, Y = 130, Name = "The Wetlands", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_11"} },
-				new MapPin() { X = 450, Y = 200, Name = "The Southern Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_12"} },
-				new MapPin() { X = 460, Y = 250, Name = "The Cavern of Anger", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_6_13"} },
-				new MapPin() { X = 540, Y = 250, Name = "The Beacon", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_14"} },
-				new MapPin() { X = 714, Y = 197, Name = "The Brine King's Reef", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_6_15"} },
+				new MapPin()
+				{
+					X = 195, Y = 475, Name = "Lioneye's Watch", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_town", Experience = 5561, Level = 50 }}
+				},
+				new MapPin()
+				{
+					X = 176, Y = 520, Name = "The Twilight Strand", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_1", Experience = 4415, Level = 45 }}
+				},
+				new MapPin()
+				{
+					X = 200, Y = 420, Name = "The Coast", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_2", Experience = 4415, Level = 45 }}
+				},
+				new MapPin()
+				{
+					X = 240, Y = 450, Name = "The Tidal Island", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_3", Experience = 4415, Level = 45 }}
+				},
+				new MapPin()
+				{
+					X = 235, Y = 380, Name = "The Mud Flats", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_4", Experience = 4634, Level = 46 }}
+				},
+				new MapPin()
+				{
+					X = 180, Y = 345, Name = "The Karui Fortress", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_5", Experience = 4634, Level = 46 }}
+				},
+				new MapPin()
+				{
+					X = 176, Y = 265, Name = "The Ridge", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_6", Experience = 4634, Level = 46 }}
+				},
+				new MapPin()
+				{
+					X = 210, Y = 200, Name = "The Prison", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_7_1", Experience = 4854, Level = 47 }, new MapWorldArea(){ Code = "2_6_7_2", Experience = 4854, Level = 47 }}
+				},
+				new MapPin()
+				{
+					X = 270, Y = 200, Name = "Prisoner's Gate", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_8", Experience = 4854, Level = 47 }}
+				},
+				new MapPin()
+				{
+					X = 280, Y = 150, Name = "The Western Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_9", Experience = 5086, Level = 48 }}
+				},
+				new MapPin()
+				{
+					X = 370, Y = 180, Name = "The Riverways", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_10", Experience = 5086, Level = 48 }}
+				},
+				new MapPin()
+				{
+					X = 350, Y = 130, Name = "The Wetlands", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_11", Experience = 5086, Level = 48 }}
+				},
+				new MapPin()
+				{
+					X = 450, Y = 200, Name = "The Southern Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_12", Experience = 5318, Level = 49 }}
+				},
+				new MapPin()
+				{
+					X = 460, Y = 250, Name = "The Cavern of Anger", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_13", Experience = 5318, Level = 49 }}
+				},
+				new MapPin()
+				{
+					X = 540, Y = 250, Name = "The Beacon", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_14", Experience = 5318, Level = 49 }}
+				},
+				new MapPin()
+				{
+					X = 714, Y = 197, Name = "The Brine King's Reef", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_6_15", Experience = 5561, Level = 50 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 675, Y = 218, Name = "The Bridge Encampment", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_7_town"} },
-				new MapPin() { X = 617, Y = 234, Name = "The Broken Bridge", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_7_1"} },
-				new MapPin() { X = 587, Y = 322, Name = "The Crossroads", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_2"} },
-				new MapPin() { X = 663, Y = 402, Name = "The Fellshrine Ruins", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_7_3"} },
-				new MapPin() { X = 739, Y = 414, Name = "The Crypt", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_4"} },
-				new MapPin() { X = 499, Y = 235, Name = "The Chamber of Sins", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_5_1", "2_7_5_2"} },
-				new MapPin() { X = 435, Y = 200, Name = "Maligaro's Sanctum", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_7_5_map"} },
-				new MapPin() { X = 487, Y = 347, Name = "The Den", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_6"} },
-				new MapPin() { X = 485, Y = 458, Name = "The Ashen Fields", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_7"} },
-				new MapPin() { X = 170, Y = 307, Name = "The Northern Forest", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_8"} },
-				new MapPin() { X = 96, Y = 344, Name = "The Dread Thicket", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_7_9"} },
-				new MapPin() { X = 206, Y = 203, Name = "The Causeway", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_10"} },
-				new MapPin() { X = 155, Y = 161, Name = "The Vaal City", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_7_11"} },
-				new MapPin() { X = 96, Y = 139, Name = "The Temple of Decay", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_7_12_1", "2_7_12_2"} },
+				new MapPin()
+				{
+					X = 675, Y = 218, Name = "The Bridge Encampment", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_town", Experience = 6859, Level = 55 }}
+				},
+				new MapPin()
+				{
+					X = 617, Y = 234, Name = "The Broken Bridge", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_1", Experience = 5561, Level = 50 }}
+				},
+				new MapPin()
+				{
+					X = 587, Y = 322, Name = "The Crossroads", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_2", Experience = 5808, Level = 51 }}
+				},
+				new MapPin()
+				{
+					X = 663, Y = 402, Name = "The Fellshrine Ruins", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_3", Experience = 5808, Level = 51 }}
+				},
+				new MapPin()
+				{
+					X = 739, Y = 414, Name = "The Crypt", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_4", Experience = 5808, Level = 51 }}
+				},
+				new MapPin()
+				{
+					X = 499, Y = 235, Name = "The Chamber of Sins", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_5_1", Experience = 6064, Level = 52 }, new MapWorldArea(){ Code = "2_7_5_2", Experience = 6064, Level = 52 }}
+				},
+				new MapPin()
+				{
+					X = 435, Y = 200, Name = "Maligaro's Sanctum", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_5_map", Experience = 6064, Level = 52 }}
+				},
+				new MapPin()
+				{
+					X = 487, Y = 347, Name = "The Den", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_6", Experience = 6324, Level = 53 }}
+				},
+				new MapPin()
+				{
+					X = 485, Y = 458, Name = "The Ashen Fields", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_7", Experience = 6324, Level = 53 }}
+				},
+				new MapPin()
+				{
+					X = 170, Y = 307, Name = "The Northern Forest", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_8", Experience = 6324, Level = 53 }}
+				},
+				new MapPin()
+				{
+					X = 96, Y = 344, Name = "The Dread Thicket", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_9", Experience = 6324, Level = 53 }}
+				},
+				new MapPin()
+				{
+					X = 206, Y = 203, Name = "The Causeway", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_10", Experience = 6585, Level = 54 }}
+				},
+				new MapPin()
+				{
+					X = 155, Y = 161, Name = "The Vaal City", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_11", Experience = 6585, Level = 54 }}
+				},
+				new MapPin()
+				{
+					X = 96, Y = 139, Name = "The Temple of Decay", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_7_12_1", Experience = 6585, Level = 54 }, new MapWorldArea(){ Code = "2_7_12_2", Experience = 6859, Level = 55 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 682, Y = 429, Name = "The Sarn Ramparts", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_1"} },
-				new MapPin() { X = 461, Y = 369, Name = "The Sarn Encampment", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_8_town"} },
-				new MapPin() { X = 461, Y = 290, Name = "The Toxic Conduits", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_2_1", "2_8_2_2"} },
-				new MapPin() { X = 286, Y = 307, Name = "The Grand Promenade", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_8_3"} },
-				new MapPin() { X = 214, Y = 233, Name = "The High Gardens", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_8_4"} },
-				new MapPin() { X = 291, Y = 233, Name = "The Bath House", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_5"} },
-				new MapPin() { X = 295, Y = 178, Name = "The Lunaris Concourse", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_6"} },
-				new MapPin() { X = 188, Y = 169, Name = "The Lunaris Temple", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_7_1_", "2_8_7_2"} },
-				new MapPin() { X = 565, Y = 270, Name = "The Quay", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_8_8"} },
-				new MapPin() { X = 662, Y = 252, Name = "The Grain Gate", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_9"} },
-				new MapPin() { X = 781, Y = 164, Name = "The Imperial Fields", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_10"} },
-				new MapPin() { X = 478, Y = 140, Name = "The Solaris Concourse", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_11"} },
-				new MapPin() { X = 540, Y = 92, Name = "The Solaris Temple", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_8_12_1", "2_8_12_2"} },
-				new MapPin() { X = 405, Y = 195, Name = "The Harbour Bridge", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_8_13"} },
+				new MapPin()
+				{
+					X = 682, Y = 429, Name = "The Sarn Ramparts", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_1", Experience = 6859, Level = 55 }}
+				},
+				new MapPin()
+				{
+					X = 461, Y = 369, Name = "The Sarn Encampment", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_town", Experience = 8265, Level = 60 }}
+				},
+				new MapPin()
+				{
+					X = 461, Y = 290, Name = "The Toxic Conduits", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_2_1", Experience = 7134, Level = 56 }, new MapWorldArea(){ Code = "2_8_2_2", Experience = 7134, Level = 56 }}
+				},
+				new MapPin()
+				{
+					X = 286, Y = 307, Name = "The Grand Promenade", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_3", Experience = 7134, Level = 56 }}
+				},
+				new MapPin()
+				{
+					X = 214, Y = 233, Name = "The High Gardens", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_4", Experience = 7703, Level = 58 }}
+				},
+				new MapPin()
+				{
+					X = 291, Y = 233, Name = "The Bath House", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_5", Experience = 7413, Level = 57 }}
+				},
+				new MapPin()
+				{
+					X = 295, Y = 178, Name = "The Lunaris Concourse", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_6", Experience = 7703, Level = 58 }}
+				},
+				new MapPin()
+				{
+					X = 188, Y = 169, Name = "The Lunaris Temple", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_7_1_", Experience = 7996, Level = 59 }, new MapWorldArea(){ Code = "2_8_7_2", Experience = 7996, Level = 59 }}
+				},
+				new MapPin()
+				{
+					X = 565, Y = 270, Name = "The Quay", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_8", Experience = 7413, Level = 57 }}
+				},
+				new MapPin()
+				{
+					X = 662, Y = 252, Name = "The Grain Gate", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_9", Experience = 7413, Level = 57 }}
+				},
+				new MapPin()
+				{
+					X = 781, Y = 164, Name = "The Imperial Fields", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_10", Experience = 7703, Level = 58 }}
+				},
+				new MapPin()
+				{
+					X = 478, Y = 140, Name = "The Solaris Concourse", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_11", Experience = 7703, Level = 58 }}
+				},
+				new MapPin()
+				{
+					X = 540, Y = 92, Name = "The Solaris Temple", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_12_1", Experience = 7996, Level = 59 }, new MapWorldArea(){ Code = "2_8_12_2", Experience = 7996, Level = 59 }}
+				},
+				new MapPin()
+				{
+					X = 405, Y = 195, Name = "The Harbour Bridge", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_8_13", Experience = 8265, Level = 60 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 364, Y = 506, Name = "The Blood Aqueduct", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_9_1"} },
-				new MapPin() { X = 252, Y = 425, Name = "Highgate", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_9_town"} },
-				new MapPin() { X = 460, Y = 326, Name = "The Descent", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_2"} },
-				new MapPin() { X = 680, Y = 508, Name = "The Vastiri Desert", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_9_3"} },
-				new MapPin() { X = 805, Y = 334, Name = "The Oasis", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_4"} },
-				new MapPin() { X = 640, Y = 285, Name = "The Foothills", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_9_5"} },
-				new MapPin() { X = 590, Y = 193, Name = "The Boiling Lake", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_6"} },
-				new MapPin() { X = 491, Y = 191, Name = "The Tunnel", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_9_7"} },
-				new MapPin() { X = 376, Y = 161, Name = "The Quarry", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_9_8"} },
-				new MapPin() { X = 396, Y = 113, Name = "The Refinery", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_9"} },
-				new MapPin() { X = 163, Y = 137, Name = "The Belly of the Beast", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_10_1"} },
-				new MapPin() { X = 83, Y = 195, Name = "The Rotting Core", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_9_10_2"} },
+				new MapPin()
+				{
+					X = 364, Y = 506, Name = "The Blood Aqueduct", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_1", Experience = 8525, Level = 61 }}
+				},
+				new MapPin()
+				{
+					X = 252, Y = 425, Name = "Highgate", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_town", Experience = 10014, Level = 67 }}
+				},
+				new MapPin()
+				{
+					X = 460, Y = 326, Name = "The Descent", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_2", Experience = 8525, Level = 61 }}
+				},
+				new MapPin()
+				{
+					X = 680, Y = 508, Name = "The Vastiri Desert", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_3", Experience = 8525, Level = 61 }}
+				},
+				new MapPin()
+				{
+					X = 805, Y = 334, Name = "The Oasis", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_4", Experience = 8525, Level = 61 }}
+				},
+				new MapPin()
+				{
+					X = 640, Y = 285, Name = "The Foothills", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_5", Experience = 8781, Level = 62 }}
+				},
+				new MapPin()
+				{
+					X = 590, Y = 193, Name = "The Boiling Lake", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_6", Experience = 8781, Level = 62 }}
+				},
+				new MapPin()
+				{
+					X = 491, Y = 191, Name = "The Tunnel", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_7", Experience = 8781, Level = 62 }}
+				},
+				new MapPin()
+				{
+					X = 376, Y = 161, Name = "The Quarry", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_8", Experience = 9032, Level = 63 }}
+				},
+				new MapPin()
+				{
+					X = 396, Y = 113, Name = "The Refinery", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_9", Experience = 9032, Level = 63 }}
+				},
+				new MapPin()
+				{
+					X = 163, Y = 137, Name = "The Belly of the Beast", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_10_1", Experience = 9032, Level = 63 }}
+				},
+				new MapPin()
+				{
+					X = 83, Y = 195, Name = "The Rotting Core", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_9_10_2", Experience = 9283, Level = 64 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 262, Y = 60, Name = "Oriath Docks", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_10_town"} },
-				new MapPin() { X = 340, Y = 130, Name = "The Cathedral Rooftop", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_10_1"} },
-				new MapPin() { X = 406, Y = 224, Name = "The Ravaged Square", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_10_2"} },
-				new MapPin() { X = 720, Y = 440, Name = "The Torched Courts", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_10_3"} },
-				new MapPin() { X = 660, Y = 505, Name = "The Desecrated Chambers", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_10_4"} },
-				new MapPin() { X = 640, Y = 223, Name = "The Canals", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_10_5"} },
-				new MapPin() { X = 750, Y = 215, Name = "The Feeding Trough", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_10_6"} },
-				new MapPin() { X = 230, Y = 350, Name = "The Control Blocks", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_10_7"} },
-				new MapPin() { X = 326, Y = 418, Name = "The Reliquary", IsTown = false, IsWaypoint = true, Codes = new string[]{"2_10_8"} },
-				new MapPin() { X = 687, Y = 150, Name = "The Ossuary", IsTown = false, IsWaypoint = false, Codes = new string[]{"2_10_9"} },
+				new MapPin()
+				{
+					X = 262, Y = 60, Name = "Oriath Docks", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_town", Experience = 10487, Level = 69 }}
+				},
+				new MapPin()
+				{
+					X = 340, Y = 130, Name = "The Cathedral Rooftop", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_1", Experience = 9283, Level = 64 }}
+				},
+				new MapPin()
+				{
+					X = 406, Y = 224, Name = "The Ravaged Square", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_2", Experience = 9283, Level = 64 }}
+				},
+				new MapPin()
+				{
+					X = 720, Y = 440, Name = "The Torched Courts", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_3", Experience = 9532, Level = 65 }}
+				},
+				new MapPin()
+				{
+					X = 660, Y = 505, Name = "The Desecrated Chambers", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_4", Experience = 9532, Level = 65 }}
+				},
+				new MapPin()
+				{
+					X = 640, Y = 223, Name = "The Canals", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_5", Experience = 9773, Level = 66 }}
+				},
+				new MapPin()
+				{
+					X = 750, Y = 215, Name = "The Feeding Trough", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_6", Experience = 10014, Level = 67 }}
+				},
+				new MapPin()
+				{
+					X = 230, Y = 350, Name = "The Control Blocks", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_7", Experience = 9773, Level = 66 }}
+				},
+				new MapPin()
+				{
+					X = 326, Y = 418, Name = "The Reliquary", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_8", Experience = 10014, Level = 67 }}
+				},
+				new MapPin()
+				{
+					X = 687, Y = 150, Name = "The Ossuary", IsTown = false, IsWaypoint = false,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_10_9", Experience = 10014, Level = 67 }}
+				},
 			},
 			new List<MapPin>()
 			{
-				new MapPin() { X = 781, Y = 354, Name = "Karui Shores", IsTown = true, IsWaypoint = true, Codes = new string[]{"2_11_endgame_town"} },
+				new MapPin()
+				{
+					X = 781, Y = 354, Name = "Karui Shores", IsTown = true, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "2_11_endgame_town", Experience = 10487, Level = 69 }}
+				},
 			},
 		};
 	}

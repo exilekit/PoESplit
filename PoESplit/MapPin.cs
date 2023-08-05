@@ -7,6 +7,6 @@
         public bool IsTown { get; set; }
         public bool IsWaypoint { get; set; }
         public string Name { get; set; }
-        public string[] Codes { get; set; }
+        public MapWorldArea[] Areas { get; set; }
     }
 }

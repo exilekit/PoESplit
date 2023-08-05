@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AddHalfMultiValueConverter.cs" />
+    <Compile Include="MapWorldArea.cs" />
     <Compile Include="PlayerInformation.cs" />
     <Compile Include="CsvExporter.cs" />
     <Compile Include="TimeTracker.cs" />
