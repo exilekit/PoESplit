@@ -50,7 +50,7 @@
                             FontSize="12"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                            <TextBlock Text="Lvl 24"/>
+                            <TextBlock Text="{Binding Level}"/>
                         </Label>                        
                         <Label 
                             Padding="2 0 2 0" 

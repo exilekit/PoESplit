@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace PoESplit
 {
@@ -10,6 +11,7 @@ namespace PoESplit
         public TimeSpan fTimeSpan;
         private readonly double fX;
         private readonly double fY;
+        private readonly string fLevel;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,6 +24,15 @@ namespace PoESplit
         {
             fX = mapPin.X;
             fY = mapPin.Y;
+            fLevel = "Lvl " + string.Join("/", mapPin.Areas.Select(w => w.Level));
+        }
+
+        public string Level
+        {
+            get
+            {
+                return fLevel;
+            }
         }
 
         public double X
