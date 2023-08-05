@@ -60,9 +60,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AddHalfMultiValueConverter.cs" />
+    <Compile Include="HalfValueConverter.cs" />
     <Compile Include="MapWorldArea.cs" />
+    <Compile Include="MarginMultiValueConverter.cs" />
     <Compile Include="PlayerInformation.cs" />
     <Compile Include="CsvExporter.cs" />
+    <Compile Include="SubtractHalfMultiValueConverter.cs" />
     <Compile Include="TimeTracker.cs" />
     <Page Include="DebugWindow.xaml">
       <SubType>Designer</SubType>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MarkupTemplates\MapConnections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MarkupTemplates\MapPinEfficiency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

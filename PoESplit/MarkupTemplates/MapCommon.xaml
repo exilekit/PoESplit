@@ -7,8 +7,13 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <local:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
     <local:AddHalfMultiValueConverter x:Key="AddHalfMultiValueConverter"/>
+    <local:SubtractHalfMultiValueConverter x:Key="SubtractHalfMultiValueConverter"/>
+    <local:HalfValueConverter x:Key="HalfValueConverter"/>
+    <local:MarginMultiValueConverter x:Key="MarginMultiValueConverter"/>
     <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
     <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>
     <BitmapImage x:Key="WorldPanelActivatedWaypointPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelActivatedWaypointPinIcon.png"/>
     <clr:Double x:Key="PlayerMarkerSize">60</clr:Double>
+    <clr:Double x:Key="NegativeDummyMargin">-10000</clr:Double>
+    <clr:Double x:Key="DummyMargin">10000</clr:Double>
 </ResourceDictionary>

@@ -23,6 +23,7 @@
                 <ResourceDictionary Source="MarkupTemplates\MapPins.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPlayerMarker.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPinTimestamps.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\MapPinEfficiency.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -34,6 +35,7 @@
             <Control Template="{StaticResource MapPins}"/>
             <Control Template="{StaticResource MapPlayerMarker}"/>
             <Control Template="{StaticResource MapPinTimestamps}"/>
+            <Control Template="{StaticResource MapPinEfficiency}"/>
 
             <Grid
                 Width="{Binding CanvasWidth}" 
