@@ -55,10 +55,6 @@
             <Button x:Name="exportCSV" Margin="2" Style="{StaticResource PoBButton}">
                 <TextBlock Style="{StaticResource DisableableText}">Export to CSV</TextBlock>
             </Button>
-            
-            <ToggleButton Margin="2" IsEnabled="False" Style="{StaticResource PoBToggleButton}">
-                <TextBlock Style="{StaticResource DisableableText}">Show Efficiency</TextBlock>
-            </ToggleButton>
             <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsMapVisible, Mode=TwoWay}">Show Map</ToggleButton>
             <ToggleButton Margin="2" Style="{StaticResource PoBToggleButton}" IsChecked="{Binding Path=IsDebugVisible, Mode=TwoWay}">Show Debug</ToggleButton>
         </StackPanel>
