@@ -7,8 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="MapCommon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <x:Static x:Key="MapTimestampWidth" Member="local:MapTimestamp.kWidth"/>
-    
+
     <ControlTemplate x:Key="MapPinTimestamps" TargetType="{x:Type Control}">
         <ItemsControl d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" ItemsSource="{Binding MapPinTimestamps}">
             <ItemsControl.ItemsPanel>
@@ -20,18 +19,12 @@
                 <Style>
                     <Setter Property="Canvas.Left">
                         <Setter.Value>
-                            <MultiBinding Converter="{StaticResource CenteringMultiValueConverter}">
-                                <Binding Path="X"/>
-                                <Binding Source="{StaticResource MapTimestampWidth}"/>
-                            </MultiBinding>
+                            <Binding Path="X"/>
                         </Setter.Value>
                     </Setter>
                     <Setter Property="Canvas.Top">
                         <Setter.Value>
-                            <MultiBinding Converter="{StaticResource AddHalfMultiValueConverter}">
-                                <Binding Path="Y"/>
-                                <Binding Path="Height" Source="{StaticResource WorldPanelVisitedPinIcon}"/>
-                            </MultiBinding>
+                            <Binding Path="Y"/>
                         </Setter.Value>
                     </Setter>
                 </Style>
@@ -39,14 +32,44 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel 
-                        Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" 
-                        Width="{Binding Source={StaticResource MapTimestampWidth}}">
-                        <Label Padding="2" Margin="0"   
+                        Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <StackPanel.Margin>
+                            <MultiBinding Converter="{StaticResource MarginMultiValueConverter}" Mode="OneWay">
+                                <Binding Source="{StaticResource NegativeDummyMargin}"/>
+                                <Binding Source="{StaticResource NegativeDummyMargin}"/>
+                                <Binding Source="{StaticResource NegativeDummyMargin}"/>
+                                <Binding Source="{StaticResource NegativeDummyMargin}"/>
+                            </MultiBinding>
+                        </StackPanel.Margin>
+                        <Label 
+                            Padding="2 2 2 0" 
+                            Background="#99000000"                               
+                            Foreground="White"
+                            FontSize="12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <TextBlock Text="Lvl 24"/>
+                        </Label>                        
+                        <Label 
+                            Padding="2 0 2 0" 
                             Background="#99000000"                               
                             Foreground="White"
                             FontSize="20"
-                            HorizontalAlignment="Center">
+                            Visibility="Collapsed"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
                             <TextBlock Text="{Binding Time}"/>
+                        </Label>
+                        <Label 
+                            Padding="2 0 2 2" 
+                            Background="#99000000"                               
+                            Foreground="Lime"
+                            FontSize="12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <TextBlock Text="+58%"/>
                         </Label>
                     </StackPanel>
                 </DataTemplate>

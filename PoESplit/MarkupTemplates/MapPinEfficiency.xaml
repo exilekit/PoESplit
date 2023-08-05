@@ -37,15 +37,21 @@
                         Background="#99000000"
                         Foreground="White"
                         FontSize="14"
+                        Visibility="Hidden"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom">
+                        VerticalAlignment="Center">
                         <Label.Margin>
                             <MultiBinding Converter="{StaticResource MarginMultiValueConverter}" Mode="OneWay">
                                 <Binding Source="{StaticResource NegativeDummyMargin}"/>
                                 <Binding Source="{StaticResource NegativeDummyMargin}"/>
                                 <Binding Source="{StaticResource NegativeDummyMargin}"/>
-                                <Binding Path="Height" Source="{StaticResource WorldPanelVisitedPinIcon}" Converter="{StaticResource HalfValueConverter}"/>
-                            </MultiBinding>                            
+                                <!-- <Binding Path="Height" Source="{StaticResource WorldPanelVisitedPinIcon}" Converter="{StaticResource HalfValueConverter}"/> -->
+                                <Binding>
+                                    <Binding.Source>
+                                        <clr:Double>-9976.5</clr:Double>
+                                    </Binding.Source>
+                                </Binding>
+                            </MultiBinding>
                         </Label.Margin>
                         <TextBlock Text="4 | +445%"/>
                     </Label>

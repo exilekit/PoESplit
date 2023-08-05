@@ -44,6 +44,7 @@ namespace PoESplit
         {
             get
             {
+                return true;
                 return fTimeSpan != TimeSpan.Zero;
             }
         }
