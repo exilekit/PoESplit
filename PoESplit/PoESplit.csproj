@@ -63,6 +63,7 @@
     <Compile Include="MarkupTemplates\HalfValueConverter.cs" />
     <Compile Include="MapWorldArea.cs" />
     <Compile Include="MarkupTemplates\MarginMultiValueConverter.cs" />
+    <Compile Include="MarkupTemplates\PenalityConverter.cs" />
     <Compile Include="PlayerInformation.cs" />
     <Compile Include="CsvExporter.cs" />
     <Compile Include="MarkupTemplates\SubtractHalfMultiValueConverter.cs" />

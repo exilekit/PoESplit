@@ -14,7 +14,7 @@ namespace PoESplit
         private const int kMaximumLevelForMuling = 2;
         public static bool fLoggedToCharacterScreen = false;
         public static string fPlayerName = "unoriginal_cold_dot";
-        public static int fPlayerLevel = 2;
+        public static int fPlayerLevel = 5;
 
         public static void NotifyRunReset()
         {

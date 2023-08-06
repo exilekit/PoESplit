@@ -11,6 +11,7 @@ namespace PoESplit
         public TimeSpan fTimeSpan;
         private readonly double fX;
         private readonly double fY;
+
         private readonly string fLevel;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -62,7 +63,7 @@ namespace PoESplit
         {
             get
             {
-                return 42;
+                return 4;
             }
         }
 

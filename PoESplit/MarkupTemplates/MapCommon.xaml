@@ -10,6 +10,7 @@
     <mt:SubtractHalfMultiValueConverter x:Key="SubtractHalfMultiValueConverter"/>
     <mt:HalfValueConverter x:Key="HalfValueConverter"/>
     <mt:MarginMultiValueConverter x:Key="MarginMultiValueConverter"/>
+    <mt:PenalityConverter x:Key="PenalityConverter"/>
     <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
     <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>
     <BitmapImage x:Key="WorldPanelActivatedWaypointPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelActivatedWaypointPinIcon.png"/>

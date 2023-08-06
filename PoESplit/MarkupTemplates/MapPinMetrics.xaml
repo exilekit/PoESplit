@@ -65,7 +65,7 @@
                         <Label 
                             Padding="2 0 2 2" 
                             Background="#99000000"                               
-                            Foreground="Lime"
+                            Foreground="{Binding ExperienceBonus, Converter={StaticResource PenalityConverter}}"
                             FontSize="12"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
