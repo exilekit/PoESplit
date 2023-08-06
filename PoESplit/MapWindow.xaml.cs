@@ -92,6 +92,22 @@ namespace PoESplit
             }
         }
 
+        public bool PlayerNameAndLevelKnown
+        {
+            get
+            {
+                return PlayerInformation.fPlayerNameAndLevelKnown;
+            }
+        }
+
+        public string PlayerNameAndLevel
+        {
+            get
+            {
+                return $"{PlayerInformation.fPlayerName} (level {PlayerInformation.fPlayerLevel})";
+            }
+        }
+
         public double PlayerX
         {
             get

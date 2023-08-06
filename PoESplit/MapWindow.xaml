@@ -132,12 +132,13 @@
                         <TextBlock Text="{Binding PlayerPinName}"/>
                     </Label>
                     <Label
+                        Visibility="{Binding PlayerNameAndLevelKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
                         FontSize="14"
                         HorizontalAlignment="Right"
                         Background="#88000000"
                         Foreground="White">
-                        <TextBlock Text="unoriginal_cold_dot (level 52)"/>
-                    </Label>                    
+                        <TextBlock Text="{Binding PlayerNameAndLevel}"/>
+                    </Label>
                 </StackPanel>
             </Grid>
         </Grid>
