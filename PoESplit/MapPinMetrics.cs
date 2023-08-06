@@ -13,7 +13,7 @@ namespace PoESplit
         private readonly double fX;
         private readonly double fY;
 
-        private readonly int[] fAreaLevels;
+        private readonly MapWorldArea[] fAreas;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -26,14 +26,14 @@ namespace PoESplit
         {
             fX = mapPin.X;
             fY = mapPin.Y;
-            fAreaLevels = mapPin.Areas.Select(w => w.Level).ToArray();
+            fAreas = mapPin.Areas;
         }
 
-        public ICollection<int> AreaLevels
+        public ICollection<MapWorldArea> Areas
         {
             get
             {
-                return fAreaLevels;
+                return fAreas;
             }
         }
 

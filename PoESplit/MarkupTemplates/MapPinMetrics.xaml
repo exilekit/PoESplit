@@ -19,7 +19,7 @@
                 FontSize="12">
                 Lvl
             </Label>
-            <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding AreaLevels}">
+            <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding Areas}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal"/>
@@ -34,11 +34,11 @@
                             FontSize="12">
                             <Label.Foreground>
                                 <MultiBinding Converter="{StaticResource PenalityMultiValueConverter}" Mode="OneWay">
-                                    <Binding Path="."/>
+                                    <Binding Path="Level"/>
                                     <Binding Path="PlayerLevel" RelativeSource="{RelativeSource AncestorType={x:Type local:MapWindow}, Mode=FindAncestor}" Mode="OneWay"/>
                                 </MultiBinding>
                             </Label.Foreground>
-                            <TextBlock Text="{Binding .}"/>
+                            <TextBlock Text="{Binding Level}"/>
                         </Label>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -47,7 +47,7 @@
     </ControlTemplate>
 
     <ControlTemplate x:Key="MapPinMetrics_Experience" TargetType="{x:Type Control}">
-        <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding AreaLevels}">
+        <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding Areas}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
@@ -62,11 +62,11 @@
                         FontSize="12">
                         <Label.Foreground>
                             <MultiBinding Converter="{StaticResource PenalityMultiValueConverter}" Mode="OneWay">
-                                <Binding Path="."/>
+                                <Binding Path="Level"/>
                                 <Binding Path="PlayerLevel" RelativeSource="{RelativeSource AncestorType={x:Type local:MapWindow}, Mode=FindAncestor}" Mode="OneWay"/>
                             </MultiBinding>
                         </Label.Foreground>
-                        <TextBlock Text="{Binding .}"/>
+                        <TextBlock Text="{Binding Experience}"/>
                     </Label>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
