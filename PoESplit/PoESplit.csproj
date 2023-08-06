@@ -59,13 +59,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddHalfMultiValueConverter.cs" />
-    <Compile Include="HalfValueConverter.cs" />
+    <Compile Include="MarkupTemplates\AddHalfMultiValueConverter.cs" />
+    <Compile Include="MarkupTemplates\HalfValueConverter.cs" />
     <Compile Include="MapWorldArea.cs" />
-    <Compile Include="MarginMultiValueConverter.cs" />
+    <Compile Include="MarkupTemplates\MarginMultiValueConverter.cs" />
     <Compile Include="PlayerInformation.cs" />
     <Compile Include="CsvExporter.cs" />
-    <Compile Include="SubtractHalfMultiValueConverter.cs" />
+    <Compile Include="MarkupTemplates\SubtractHalfMultiValueConverter.cs" />
     <Compile Include="MetricsTracker.cs" />
     <Page Include="DebugWindow.xaml">
       <SubType>Designer</SubType>
@@ -79,7 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CenteringMultiValueConverter.cs" />
+    <Compile Include="MarkupTemplates\CenteringMultiValueConverter.cs" />
     <Compile Include="ClientParser\Body\ConnectedToLine.cs" />
     <Compile Include="ClientParser\Body\EnteredAreaLine.cs" />
     <Compile Include="ClientParser\Body\GeneratingLevelLine.cs" />

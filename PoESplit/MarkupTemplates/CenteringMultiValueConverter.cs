@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace PoESplit
+namespace PoESplit.MarkupTemplates
 {
-    class SubtractHalfMultiValueConverter : IMultiValueConverter
+    class CenteringMultiValueConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {

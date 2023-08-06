@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Data;
 
-namespace PoESplit
+namespace PoESplit.MarkupTemplates
 {
-    class AddHalfMultiValueConverter : IMultiValueConverter
+    class MarginMultiValueConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return (double)values[0] + ((double)values[1] / 2.0);
+            return new Thickness(
+                System.Convert.ToDouble(values[0]),
+                System.Convert.ToDouble(values[1]),
+                System.Convert.ToDouble(values[2]),
+                System.Convert.ToDouble(values[3]));
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
