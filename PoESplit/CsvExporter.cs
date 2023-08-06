@@ -9,14 +9,14 @@ namespace PoESplit
 {
     static class CsvExporter
     {
-        public static void Export(string path, TimeTracker timeTracker)
+        public static void Export(string path, MetricsTracker metricTracker)
         {
             try
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     // write the total campaign time
-                    WriteRow(sw, new List<object>() { "Total Campaign", timeTracker.fCampaignTime.fTimeSpan });
+                    WriteRow(sw, new List<object>() { "Total Campaign", metricTracker.fCampaignTime.fTimeSpan });
                     WriteRow(sw, new List<object>() { });
 
                     // write the act sums
@@ -25,7 +25,7 @@ namespace PoESplit
                         for (int actIdx = 0; actIdx < BakedData.fMapPins.Length; ++actIdx)
                         {
                             row.Add($"Act {actIdx + 1}");
-                            row.Add(timeTracker.fActTimestamps[actIdx].fTimeSpan);
+                            row.Add(metricTracker.fActTimestamps[actIdx].fTimeSpan);
                         }
                         WriteRow(sw, row);
                         WriteRow(sw, new List<object>() { });
@@ -45,7 +45,7 @@ namespace PoESplit
                                 if (pinIdx < BakedData.fMapPins[actIdx].Count)
                                 {
                                     row.Add(BakedData.fMapPins[actIdx][pinIdx].Name);
-                                    row.Add(timeTracker.fMapPinMetrics[actIdx][pinIdx].fTimeSpan);
+                                    row.Add(metricTracker.fMapPinMetrics[actIdx][pinIdx].fTimeSpan);
                                     rowHadData = true;
                                 }
                                 else

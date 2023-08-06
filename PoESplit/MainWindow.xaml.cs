@@ -11,7 +11,7 @@ namespace PoESplit
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        public TimeTracker fTimeTracker;
+        public MetricsTracker fMetricsTracker;
         public readonly MapWindow fMapWindow;
         public readonly DebugWindow fDebugWindow;
         readonly LogReader fLogReader;
@@ -22,7 +22,7 @@ namespace PoESplit
         public MainWindow()
         {
             this.DataContext = this;
-            fTimeTracker = new TimeTracker();
+            fMetricsTracker = new MetricsTracker();
             fDebugWindow = new DebugWindow(this);
             fLogReader = new LogReader(this);
             fLogEventController = new LogEventController(this);
@@ -52,7 +52,7 @@ namespace PoESplit
             bool? result = sfd.ShowDialog();
             if (result == true)
             {
-                CsvExporter.Export(sfd.FileName, fTimeTracker);
+                CsvExporter.Export(sfd.FileName, fMetricsTracker);
             }
         }
 
@@ -60,12 +60,12 @@ namespace PoESplit
         {
             if (toggleRun.IsChecked == true)
             {
-                fTimeTracker.fStopwatch.Start();
+                fMetricsTracker.fStopwatch.Start();
                 toggleRun.Content = "Pause Run";
             }
             else
             {
-                fTimeTracker.fStopwatch.Stop();
+                fMetricsTracker.fStopwatch.Stop();
                 toggleRun.Content = "Resume Run";
             }
         }
@@ -80,7 +80,7 @@ namespace PoESplit
             if (result == MessageBoxResult.Yes)
             {
                 PlayerInformation.NotifyRunReset();
-                fTimeTracker = new TimeTracker();
+                fMetricsTracker = new MetricsTracker();
                 fMapWindow.NotifyRunReset();
                 toggleRun.Content = "Begin Run";
                 toggleRun.IsChecked = false;
@@ -139,7 +139,7 @@ namespace PoESplit
                 }
             }
 
-            fTimeTracker.Tick();
+            fMetricsTracker.Tick();
         }
 
         public bool IsMapVisible

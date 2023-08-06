@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace PoESplit
 {
-    public class TimeTracker
+    public class MetricsTracker
     {
         public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
@@ -18,7 +18,7 @@ namespace PoESplit
 
         private MapPinMetrics fUnknownArea = new MapPinMetrics();
 
-        public TimeTracker()
+        public MetricsTracker()
         {
             fMapPinMetrics = BakedData.fMapPins.Select(a => a.Select(b => new MapPinMetrics(b)).ToList()).ToArray();
             fActTimestamps = BakedData.fMapPins.Select(a => new MapPinMetrics()).ToArray();

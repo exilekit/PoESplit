@@ -135,7 +135,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.fMapPinMetrics[fVisibleActIdx];
+                return fMainWindow.fMetricsTracker.fMapPinMetrics[fVisibleActIdx];
             }
         }
 
@@ -151,7 +151,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.fActTimestamps[fVisibleActIdx];
+                return fMainWindow.fMetricsTracker.fActTimestamps[fVisibleActIdx];
             }
         }
 
@@ -159,7 +159,7 @@ namespace PoESplit
         {
             get
             {
-                return fMainWindow.fTimeTracker.fCampaignTime;
+                return fMainWindow.fMetricsTracker.fCampaignTime;
             }
         }
 
