@@ -3,6 +3,7 @@ using PoESplit.ClientParser.Header;
 using PoESplit.ExileKit;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace PoESplit.ClientParser
 {
@@ -36,7 +37,7 @@ namespace PoESplit.ClientParser
                         bool _ =
                             TryProcessConnectedToLine(tickstampedLine.fRemainder) ||
                             TryProcessGeneratingLevelLine(tickstampedLine.fRemainder) ||
-                            TryProcessEnteredAreaLine(tickstampedLine.fRemainder);
+                            TryProcessLeveledUpLine(tickstampedLine.fRemainder);
                     }
                 }
             }
@@ -57,12 +58,13 @@ namespace PoESplit.ClientParser
             }
         }
 
-        private bool TryProcessEnteredAreaLine(string remainder)
+        private bool TryProcessLeveledUpLine(string remainder)
         {
-            EnteredAreaLine enteredAreaLine = EnteredAreaLine.TryParse(remainder);
-            if (enteredAreaLine != null)
+            LeveledUpLine leveledUpLine = LeveledUpLine.TryParse(remainder);
+            if (leveledUpLine != null)
             {
-                fMainWindow.fDebugWindow.LogMessage($"You have entered \"{enteredAreaLine.fArea}\"");
+                fMainWindow.ActuallyProcessLevelup(leveledUpLine.fName, leveledUpLine.fLevel);
+                fMainWindow.fDebugWindow.LogMessage($"\"{leveledUpLine.fName}\" ({leveledUpLine.fCharacterClass}) is now level {leveledUpLine.fLevel}");
                 return true;
             }
             else

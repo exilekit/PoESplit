@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="MarkupTemplates\CenteringMultiValueConverter.cs" />
     <Compile Include="ClientParser\Body\ConnectedToLine.cs" />
-    <Compile Include="ClientParser\Body\EnteredAreaLine.cs" />
+    <Compile Include="ClientParser\Body\LeveledUpLine.cs" />
     <Compile Include="ClientParser\Body\GeneratingLevelLine.cs" />
     <Compile Include="ClientParser\Body\SpecialNoticeLine.cs" />
     <Compile Include="ClientParser\Header\HeaderTickstamped.cs" />

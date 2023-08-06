@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using PoESplit.ClientParser;
 using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
@@ -41,6 +42,20 @@ namespace PoESplit
             locateClient.Click += LocateClient_Click;
             exportCSV.Click += ExportCSV_Click;
             UpdateLocateClientState();
+        }
+
+        public void ActuallyProcessLevelup(string characterName, int level)
+        {
+            PlayerInformation.fPlayerNameAndLevelKnown = true;
+            PlayerInformation.fPlayerName = characterName;
+            PlayerInformation.fPlayerLevel = level;
+            fMapWindow.NotifyPlayerInformationChanged(false);
+
+            // notify all the map pins that they need to update their zone level/experience
+            foreach (MapPinMetrics mapPinMetrics in fMetricsTracker.fMapPinMetrics.SelectMany(w => w))
+            {
+                mapPinMetrics.NotifyPlayerLevelChange();
+            }
         }
 
         private void ExportCSV_Click(object sender, RoutedEventArgs e)

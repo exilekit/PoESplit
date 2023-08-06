@@ -1,7 +1,9 @@
-﻿using PoESplit.ExileKit;
+﻿using PoESplit.ClientParser;
+using PoESplit.ExileKit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -64,6 +66,10 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerX)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerY)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerPinName)));
+
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerNameAndLevelKnown)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerNameAndLevel)));
+
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPins)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapConnections)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundImageSource)));
@@ -257,6 +263,8 @@ namespace PoESplit
             Hide();
         }
 
+        static int DEBUG_CHARACTER_LEVEL = 1;
+
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -269,6 +277,17 @@ namespace PoESplit
                 fVisibleActIdx = Math.Min(BakedData.fMapPins.Length - 1, fVisibleActIdx + 1);
                 NotifyPlayerInformationChanged(false);
             }
+            else if (e.Key == Key.OemCloseBrackets)
+            {
+                DEBUG_CHARACTER_LEVEL++;
+                fMainWindow.ActuallyProcessLevelup("test_character", DEBUG_CHARACTER_LEVEL);
+            }
+            else if (e.Key == Key.OemOpenBrackets)
+            {
+                DEBUG_CHARACTER_LEVEL = Math.Max(1, DEBUG_CHARACTER_LEVEL - 1);
+                fMainWindow.ActuallyProcessLevelup("test_character", DEBUG_CHARACTER_LEVEL);
+            }
         }
     }
 }
+
