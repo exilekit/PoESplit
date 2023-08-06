@@ -47,6 +47,7 @@ namespace PoESplit.ClientParser
             ConnectedToLine connectedToLine = ConnectedToLine.TryParse(remainder);
             if (connectedToLine != null)
             {
+                PlayerInformation.fLoggedToCharacterScreen = true;
                 fMainWindow.fDebugWindow.LogMessage($"Connected to login server");
                 return true;
             }

@@ -10,6 +10,20 @@ namespace PoESplit
         public static int fActIdx;
         public static int fPinIdx;
 
+        public static bool fPlayerNameAndLevelKnown = true;
+        private const int kMaximumLevelForMuling = 2;
+        public static bool fLoggedToCharacterScreen = false;
+        public static string fPlayerName = "unoriginal_cold_dot";
+        public static int fPlayerLevel = 2;
+
+        public static void NotifyRunReset()
+        {
+            fPlayerNameAndLevelKnown = false;
+            fLoggedToCharacterScreen = false;
+            fPlayerName = null;
+            fPlayerLevel = 0;
+        }
+
         public static void GeneratedLevel(string area)
         {
             int actIdx;

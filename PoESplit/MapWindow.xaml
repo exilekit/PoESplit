@@ -63,7 +63,7 @@
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
-                        Act 
+                        Act
                     </Label>
                     <Label
                         FontSize="20"
@@ -78,7 +78,7 @@
                         Background="#88000000"
                         Foreground="White">
                         -
-                    </Label>                    
+                    </Label>
                     <Label
                         FontSize="20"
                         HorizontalAlignment="Left"
@@ -103,7 +103,7 @@
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
-                        Campaign - 
+                        Campaign -
                     </Label>
                     <Label
                         FontSize="20"
@@ -111,7 +111,7 @@
                         Background="#88000000"
                         Foreground="White">
                         <TextBlock Text="{Binding CampaignTimestamp.Time}"/>
-                    </Label>                    
+                    </Label>
                 </StackPanel>
             </Grid>
 
@@ -121,16 +121,23 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top">
                 <StackPanel 
-                    Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top">
                     <Label
+                        Visibility="{Binding PlayerPositionKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
                         FontSize="20"
                         HorizontalAlignment="Right"
                         Background="#88000000"
                         Foreground="White">
                         <TextBlock Text="{Binding PlayerPinName}"/>
                     </Label>
+                    <Label
+                        FontSize="14"
+                        HorizontalAlignment="Right"
+                        Background="#88000000"
+                        Foreground="White">
+                        <TextBlock Text="unoriginal_cold_dot (level 52)"/>
+                    </Label>                    
                 </StackPanel>
             </Grid>
         </Grid>

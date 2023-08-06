@@ -79,6 +79,7 @@ namespace PoESplit
                 MessageBoxImage.Exclamation);
             if (result == MessageBoxResult.Yes)
             {
+                PlayerInformation.NotifyRunReset();
                 fTimeTracker = new TimeTracker();
                 fMapWindow.NotifyRunReset();
                 toggleRun.Content = "Begin Run";
