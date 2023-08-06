@@ -53,11 +53,6 @@ namespace PoESplit
             }
         }
 
-        public void NotifyPlayerLevelChange()
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AreaLevels)));
-        }
-
         public bool IsVisible
         {
             get

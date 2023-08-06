@@ -14,7 +14,7 @@
                 Margin="0" 
                 Padding="0" 
                 VerticalAlignment="Center" 
-                Background="Lime" 
+                Background="Black" 
                 Foreground="White" 
                 FontSize="12">
                 Lvl
@@ -57,10 +57,15 @@
                 <DataTemplate>
                     <Label 
                         Margin="0" Padding="0"
-                        Background="MediumPurple"
+                        Background="Black"
                         VerticalAlignment="Center"
-                        Foreground="White"
                         FontSize="12">
+                        <Label.Foreground>
+                            <MultiBinding Converter="{StaticResource PenalityMultiValueConverter}" Mode="OneWay">
+                                <Binding Path="."/>
+                                <Binding Path="PlayerLevel" RelativeSource="{RelativeSource AncestorType={x:Type local:MapWindow}, Mode=FindAncestor}" Mode="OneWay"/>
+                            </MultiBinding>
+                        </Label.Foreground>
                         <TextBlock Text="{Binding .}"/>
                     </Label>
                 </DataTemplate>

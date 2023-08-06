@@ -50,12 +50,6 @@ namespace PoESplit
             PlayerInformation.fPlayerName = characterName;
             PlayerInformation.fPlayerLevel = level;
             fMapWindow.NotifyChanges(false);
-
-            // notify all the map pins that they need to update their zone level/experience
-            foreach (MapPinMetrics mapPinMetrics in fMetricsTracker.fMapPinMetrics.SelectMany(w => w))
-            {
-                mapPinMetrics.NotifyPlayerLevelChange();
-            }
         }
 
         private void ExportCSV_Click(object sender, RoutedEventArgs e)
