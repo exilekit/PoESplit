@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace PoESplit
         private readonly double fX;
         private readonly double fY;
 
-        private readonly string fLevel;
+        private readonly int[] fAreaLevels;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -25,21 +26,14 @@ namespace PoESplit
         {
             fX = mapPin.X;
             fY = mapPin.Y;
-            if (mapPin.IsTown)
-            {
-                fLevel = "Town";
-            }
-            else
-            {
-                fLevel = "Lvl " + string.Join("/", mapPin.Areas.Select(w => w.Level));
-            }
+            fAreaLevels = mapPin.Areas.Select(w => w.Level).ToArray();
         }
 
-        public string Level
+        public ICollection<int> AreaLevels
         {
             get
             {
-                return fLevel;
+                return fAreaLevels;
             }
         }
 

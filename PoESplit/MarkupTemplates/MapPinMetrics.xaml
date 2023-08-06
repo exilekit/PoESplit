@@ -8,6 +8,61 @@
         <ResourceDictionary Source="MapCommon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <ControlTemplate x:Key="MapPinMetrics_Level" TargetType="{x:Type Control}">
+        <StackPanel Orientation="Horizontal">
+            <Label 
+                Margin="0" 
+                Padding="0" 
+                VerticalAlignment="Center" 
+                Background="Lime" 
+                Foreground="White" 
+                FontSize="12">
+                XP
+            </Label>
+            <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding AreaLevels}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Label 
+                            Margin="0" Padding="0"
+                            Background="Orange"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            FontSize="12">
+                            <TextBlock Text="{Binding .}"/>
+                        </Label>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MapPinMetrics_Experience" TargetType="{x:Type Control}">
+        <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding AreaLevels}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Label 
+                        Margin="0" Padding="0"
+                        Background="MediumPurple"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12">
+                        <TextBlock Text="{Binding .}"/>
+                    </Label>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ControlTemplate>
+
     <ControlTemplate x:Key="MapPinMetrics" TargetType="{x:Type Control}">
         <ItemsControl d:DataContext="{d:DesignInstance local:MapWindow, IsDesignTimeCreatable=False}" ItemsSource="{Binding MapPinMetrics}">
             <ItemsControl.ItemsPanel>
@@ -43,15 +98,9 @@
                                 <Binding Source="{StaticResource NegativeDummyMargin}"/>
                             </MultiBinding>
                         </StackPanel.Margin>
-                        <Label 
-                            Padding="2 2 2 0" 
-                            Background="#99000000"                               
-                            Foreground="White"
-                            FontSize="12"
+                        <Control 
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                            <TextBlock Text="{Binding Level}"/>
-                        </Label>                        
+                            Template="{StaticResource MapPinMetrics_Level}"/>
                         <Label 
                             Padding="2 0 2 0" 
                             Background="#99000000"                               
@@ -62,15 +111,9 @@
                             VerticalAlignment="Center">
                             <TextBlock Text="{Binding Time}"/>
                         </Label>
-                        <Label 
-                            Padding="2 0 2 2" 
-                            Background="#99000000"                               
-                            Foreground="{Binding ExperienceBonus, Converter={StaticResource PenalityConverter}}"
-                            FontSize="12"
+                        <Control 
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                            <TextBlock Text="{Binding ExperienceBonus}"/>
-                        </Label>
+                            Template="{StaticResource MapPinMetrics_Experience}"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
