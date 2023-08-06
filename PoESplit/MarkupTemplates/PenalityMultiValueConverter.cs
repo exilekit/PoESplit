@@ -5,14 +5,16 @@ using System.Windows.Media;
 
 namespace PoESplit.MarkupTemplates
 {
-    class PenalityConverter : IValueConverter
+    class PenalityMultiValueConverter : IMultiValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (PlayerInformation.fPlayerNameAndLevelKnown)
             {
-                int areaLevel = System.Convert.ToInt32(value);
-                if (areaLevel < PlayerInformation.fPlayerLevel)
+                int areaLevel = System.Convert.ToInt32(values[0]);
+                int playerLevel = System.Convert.ToInt32(values[1]);
+
+                if (areaLevel < playerLevel)
                 {
                     return Brushes.Red;
                 }
@@ -27,7 +29,7 @@ namespace PoESplit.MarkupTemplates
             }
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

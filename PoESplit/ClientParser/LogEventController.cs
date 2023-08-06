@@ -79,7 +79,7 @@ namespace PoESplit.ClientParser
             if (generatingLevel != null)
             {
                 PlayerInformation.GeneratedLevel(generatingLevel.fArea);
-                fMainWindow.fMapWindow.NotifyPlayerInformationChanged(true);
+                fMainWindow.fMapWindow.NotifyChanges(true);
                 fMainWindow.fDebugWindow.LogMessage($"Generating {generatingLevel.fArea} at area level {generatingLevel.fLevel}");
                 return true;
             }

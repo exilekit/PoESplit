@@ -48,7 +48,7 @@ namespace PoESplit
             InitializeComponent();
         }
 
-        public void NotifyPlayerInformationChanged(bool focus)
+        public void NotifyChanges(bool focus)
         {
             if (PlayerInformation.fPlayerPositionKnown)
             {
@@ -69,6 +69,7 @@ namespace PoESplit
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerNameAndLevelKnown)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerNameAndLevel)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PlayerLevel)));
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPins)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapConnections)));
@@ -79,13 +80,6 @@ namespace PoESplit
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActNumber)));
-        }
-
-        public void NotifyRunReset()
-        {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MapPinMetrics)));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ActTimestamp)));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CampaignTimestamp)));
         }
 
         public bool PlayerPositionKnown
@@ -103,6 +97,14 @@ namespace PoESplit
             get
             {
                 return PlayerInformation.fPlayerNameAndLevelKnown;
+            }
+        }
+
+        public int PlayerLevel
+        {
+            get
+            {
+                return PlayerInformation.fPlayerLevel;
             }
         }
 
@@ -270,12 +272,12 @@ namespace PoESplit
             if (e.Key == Key.Left)
             {
                 fVisibleActIdx = Math.Max(0, fVisibleActIdx - 1);
-                NotifyPlayerInformationChanged(false);
+                NotifyChanges(false);
             }
             else if (e.Key == Key.Right)
             {
                 fVisibleActIdx = Math.Min(BakedData.fMapPins.Length - 1, fVisibleActIdx + 1);
-                NotifyPlayerInformationChanged(false);
+                NotifyChanges(false);
             }
             else if (e.Key == Key.OemCloseBrackets)
             {

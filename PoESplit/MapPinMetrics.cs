@@ -53,17 +53,9 @@ namespace PoESplit
             }
         }
 
-        public int ExperienceBonus
-        {
-            get
-            {
-                return 4;
-            }
-        }
-
         public void NotifyPlayerLevelChange()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ExperienceBonus)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AreaLevels)));
         }
 
         public bool IsVisible

@@ -49,7 +49,7 @@ namespace PoESplit
             PlayerInformation.fPlayerNameAndLevelKnown = true;
             PlayerInformation.fPlayerName = characterName;
             PlayerInformation.fPlayerLevel = level;
-            fMapWindow.NotifyPlayerInformationChanged(false);
+            fMapWindow.NotifyChanges(false);
 
             // notify all the map pins that they need to update their zone level/experience
             foreach (MapPinMetrics mapPinMetrics in fMetricsTracker.fMapPinMetrics.SelectMany(w => w))
@@ -96,7 +96,7 @@ namespace PoESplit
             {
                 PlayerInformation.NotifyRunReset();
                 fMetricsTracker = new MetricsTracker();
-                fMapWindow.NotifyRunReset();
+                fMapWindow.NotifyChanges(false);
                 toggleRun.Content = "Begin Run";
                 toggleRun.IsChecked = false;
             }
