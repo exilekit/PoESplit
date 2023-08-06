@@ -59,14 +59,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MarkupTemplates\AddHalfMultiValueConverter.cs" />
-    <Compile Include="MarkupTemplates\HalfValueConverter.cs" />
     <Compile Include="MapWorldArea.cs" />
     <Compile Include="MarkupTemplates\MarginMultiValueConverter.cs" />
     <Compile Include="MarkupTemplates\PenalityMultiValueConverter.cs" />
     <Compile Include="PlayerInformation.cs" />
     <Compile Include="CsvExporter.cs" />
-    <Compile Include="MarkupTemplates\SubtractHalfMultiValueConverter.cs" />
     <Compile Include="MetricsTracker.cs" />
     <Page Include="DebugWindow.xaml">
       <SubType>Designer</SubType>

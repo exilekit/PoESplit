@@ -6,9 +6,6 @@
                     xmlns:clr="clr-namespace:System;assembly=mscorlib">
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <mt:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
-    <mt:AddHalfMultiValueConverter x:Key="AddHalfMultiValueConverter"/>
-    <mt:SubtractHalfMultiValueConverter x:Key="SubtractHalfMultiValueConverter"/>
-    <mt:HalfValueConverter x:Key="HalfValueConverter"/>
     <mt:MarginMultiValueConverter x:Key="MarginMultiValueConverter"/>
     <mt:PenalityMultiValueConverter x:Key="PenalityMultiValueConverter"/>
     <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
