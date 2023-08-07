@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         MinWidth="105"
         MinHeight="70"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
         SizeToContent="WidthAndHeight"
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
         Style="{StaticResource PoBWindow}"
