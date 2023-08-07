@@ -1,39 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 
 namespace PoESplit
 {
     public class MapPinMetrics : INotifyPropertyChanged
     {
-        public const double kWidth = 100.0;
-
         public TimeSpan fTimeSpan;
-        private readonly double fX;
-        private readonly double fY;
-
-        private readonly MapWorldArea[] fAreas;
+        private readonly MapPin fMapPin;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MapPinMetrics()
-        {
-
-        }
-
         public MapPinMetrics(MapPin mapPin)
         {
-            fX = mapPin.X;
-            fY = mapPin.Y;
-            fAreas = mapPin.Areas;
+            fMapPin = mapPin;
         }
 
         public ICollection<MapWorldArea> Areas
         {
             get
             {
-                return fAreas;
+                return fMapPin.Areas;
             }
         }
 
@@ -41,7 +28,7 @@ namespace PoESplit
         {
             get
             {
-                return fX;
+                return fMapPin.X;
             }
         }
 
@@ -49,7 +36,7 @@ namespace PoESplit
         {
             get
             {
-                return fY;
+                return fMapPin.Y;
             }
         }
 
@@ -73,19 +60,7 @@ namespace PoESplit
         {
             get
             {
-                return FormatTimeSpanMinimal(fTimeSpan);
-            }
-        }
-
-        public static string FormatTimeSpanMinimal(TimeSpan ts)
-        {
-            if (ts.Hours > 0)
-            {
-                return ts.ToString("h\\:mm\\:ss");
-            }
-            else
-            {
-                return ts.ToString("m\\:ss");
+                return App.FormatTimeSpanMinimal(fTimeSpan);
             }
         }
     }

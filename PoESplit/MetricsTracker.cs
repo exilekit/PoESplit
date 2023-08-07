@@ -12,17 +12,17 @@ namespace PoESplit
         public readonly Stopwatch fStopwatch = new Stopwatch();
         private TimeSpan fLastElapsed;
 
-        public MapPinMetrics fCampaignTime;
-        public MapPinMetrics[] fActTimestamps;
+        public MapTime fCampaignTime;
+        public MapTime[] fActTimestamps;
         public List<MapPinMetrics>[] fMapPinMetrics;
 
-        private MapPinMetrics fUnknownArea = new MapPinMetrics();
+        private MapTime fUnknownArea = new MapTime();
 
         public MetricsTracker()
         {
             fMapPinMetrics = BakedData.fMapPins.Select(a => a.Select(b => new MapPinMetrics(b)).ToList()).ToArray();
-            fActTimestamps = BakedData.fMapPins.Select(a => new MapPinMetrics()).ToArray();
-            fCampaignTime = new MapPinMetrics();
+            fActTimestamps = BakedData.fMapPins.Select(a => new MapTime()).ToArray();
+            fCampaignTime = new MapTime();
         }
 
         public void Tick()

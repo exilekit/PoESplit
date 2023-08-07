@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ExperiencePenality.cs" />
+    <Compile Include="MapTime.cs" />
     <Compile Include="MapWorldArea.cs" />
     <Compile Include="MarkupTemplates\BonusExperienceMultiValueConverter.cs" />
     <Compile Include="MarkupTemplates\MarginMultiValueConverter.cs" />

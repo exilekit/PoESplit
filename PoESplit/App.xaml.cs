@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PoESplit
@@ -11,5 +6,17 @@ namespace PoESplit
     public partial class App : Application
     {
         public const string kVersion = "0.3.0.0";
+
+        public static string FormatTimeSpanMinimal(TimeSpan ts)
+        {
+            if (ts.Hours > 0)
+            {
+                return ts.ToString("h\\:mm\\:ss");
+            }
+            else
+            {
+                return ts.ToString("m\\:ss");
+            }
+        }
     }
 }

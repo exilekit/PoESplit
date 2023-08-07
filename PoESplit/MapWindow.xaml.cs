@@ -171,7 +171,7 @@ namespace PoESplit
             }
         }
 
-        public MapPinMetrics ActTimestamp
+        public MapTime ActTimestamp
         {
             get
             {
@@ -179,7 +179,7 @@ namespace PoESplit
             }
         }
 
-        public MapPinMetrics CampaignTimestamp
+        public MapTime CampaignTimestamp
         {
             get
             {

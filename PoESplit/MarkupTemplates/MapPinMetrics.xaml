@@ -9,8 +9,10 @@
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="MapPinMetrics_Level" TargetType="{x:Type Control}">
-        <StackPanel Orientation="Horizontal">
-            <Label 
+        <StackPanel 
+                d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}"
+                Orientation="Horizontal">
+            <Label                 
                 Margin="0" 
                 Padding="0" 
                 VerticalAlignment="Center" 
@@ -19,7 +21,7 @@
                 FontSize="12">
                 Lvl
             </Label>
-            <ItemsControl d:DataContext="{d:DesignInstance local:MapPinMetrics, IsDesignTimeCreatable=False}" ItemsSource="{Binding Areas}">
+            <ItemsControl  ItemsSource="{Binding Areas}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal"/>
