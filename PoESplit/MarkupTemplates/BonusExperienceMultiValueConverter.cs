@@ -42,7 +42,7 @@ namespace PoESplit.MarkupTemplates
             throw new NotImplementedException();
         }
 
-        private static bool TryGetExperienceForZone(int zoneLevel, int playerLevel, out int experience)
+        public static bool TryGetExperienceForZone(int zoneLevel, int playerLevel, out int experience)
         {
             if (BakedData.fExperienceForZoneLevel.TryGetValue(zoneLevel, out experience))
             {

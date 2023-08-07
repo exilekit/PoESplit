@@ -23,6 +23,7 @@
                 <ResourceDictionary Source="MarkupTemplates\MapPins.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPlayerMarker.xaml"/>
                 <ResourceDictionary Source="MarkupTemplates\MapPinMetrics.xaml"/>
+                <ResourceDictionary Source="MarkupTemplates\MapCornerLabels.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -35,112 +36,10 @@
             <Control Template="{StaticResource MapPlayerMarker}"/>
             <Control Template="{StaticResource MapPinMetrics}"/>
 
-            <Grid
-                Width="{Binding CanvasWidth}" 
-                Height="{Binding CanvasHeight}" 
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom">
-                <Label
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom"
-                    Background="#88000000"
-                    Foreground="White">
-                    Use the directional keys ← and → to manually change acts.
-                </Label>
-            </Grid>
-
-            <Grid
-                Width="{Binding CanvasWidth}" 
-                Height="{Binding CanvasHeight}" 
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-                <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top">
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        Act
-                    </Label>
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        <TextBlock Text="{Binding ActNumber, Mode=OneWay}"/>
-                    </Label>
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        -
-                    </Label>
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        <TextBlock Text="{Binding ActTimestamp.Time, Mode=OneWay}"/>
-                    </Label>
-                </StackPanel>
-            </Grid>
-
-            <Grid
-                Width="{Binding CanvasWidth}" 
-                Height="{Binding CanvasHeight}" 
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom">
-                <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom">
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        Campaign -
-                    </Label>
-                    <Label
-                        FontSize="20"
-                        HorizontalAlignment="Left"
-                        Background="#88000000"
-                        Foreground="White">
-                        <TextBlock Text="{Binding CampaignTimestamp.Time}"/>
-                    </Label>
-                </StackPanel>
-            </Grid>
-
-            <Grid
-                Width="{Binding CanvasWidth}" 
-                Height="{Binding CanvasHeight}" 
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top">
-                <StackPanel 
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top">
-                    <Label
-                        Visibility="{Binding PlayerPositionKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        FontSize="20"
-                        HorizontalAlignment="Right"
-                        Background="#88000000"
-                        Foreground="White">
-                        <TextBlock Text="{Binding PlayerPinName}"/>
-                    </Label>
-                    <Label
-                        Visibility="{Binding PlayerNameAndLevelKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        FontSize="14"
-                        HorizontalAlignment="Right"
-                        Background="#88000000"
-                        Foreground="White">
-                        <TextBlock Text="{Binding PlayerNameAndLevel}"/>
-                    </Label>
-                </StackPanel>
-            </Grid>
+            <Control Template="{StaticResource MapLabelBottomRight}"/>
+            <Control Template="{StaticResource MapLabelTopLeft}"/>
+            <Control Template="{StaticResource MapLabelBottomLeft}"/>
+            <Control Template="{StaticResource MapLabelTopRight}"/>
         </Grid>
     </Viewbox>
 </Window>

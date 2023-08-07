@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MarkupTemplates\MapCornerLabels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MarkupTemplates\MapPins.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
