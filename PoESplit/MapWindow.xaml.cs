@@ -265,8 +265,6 @@ namespace PoESplit
             Hide();
         }
 
-        static int DEBUG_CHARACTER_LEVEL = 1;
-
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -279,16 +277,16 @@ namespace PoESplit
                 fVisibleActIdx = Math.Min(BakedData.fMapPins.Length - 1, fVisibleActIdx + 1);
                 NotifyChanges(false);
             }
+#if DEBUG
             else if (e.Key == Key.OemCloseBrackets)
             {
-                DEBUG_CHARACTER_LEVEL++;
-                fMainWindow.ActuallyProcessLevelup("test_character", DEBUG_CHARACTER_LEVEL);
+                fMainWindow.ActuallyProcessLevelup("test_character", PlayerInformation.fPlayerLevel + 1);
             }
             else if (e.Key == Key.OemOpenBrackets)
             {
-                DEBUG_CHARACTER_LEVEL = Math.Max(1, DEBUG_CHARACTER_LEVEL - 1);
-                fMainWindow.ActuallyProcessLevelup("test_character", DEBUG_CHARACTER_LEVEL);
+                fMainWindow.ActuallyProcessLevelup("test_character", Math.Max(1, PlayerInformation.fPlayerLevel - 1));
             }
+#endif
         }
     }
 }
