@@ -40,11 +40,26 @@ namespace PoESplit
             }
         }
 
-        public bool IsVisible
+        public bool IsLevelVisible
         {
             get
             {
-                return true;
+                return !fMapPin.IsTown;
+            }
+        }
+
+        public bool IsSpacerNecessary
+        {
+            get
+            {
+                return !IsTimestampVisible;
+            }
+        }
+
+        public bool IsTimestampVisible
+        {
+            get
+            {
                 return fTimeSpan != TimeSpan.Zero;
             }
         }
@@ -53,7 +68,8 @@ namespace PoESplit
         {
             fTimeSpan += span;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Time)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsSpacerNecessary)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsTimestampVisible)));
         }
 
         public string Time

@@ -35,28 +35,28 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top">
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
                     Act
                 </Label>
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
                     <TextBlock Text="{Binding ActNumber, Mode=OneWay}"/>
                 </Label>
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
                     -
                 </Label>
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
@@ -77,14 +77,14 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom">
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
                     Campaign -
                 </Label>
                 <Label
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Left"
                         Background="#88000000"
                         Foreground="White">
@@ -105,7 +105,7 @@
                     VerticalAlignment="Top">
                 <Label
                         Visibility="{Binding PlayerPositionKnown, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        FontSize="20"
+                        FontSize="18"
                         HorizontalAlignment="Right"
                         Background="#88000000"
                         Foreground="White">
