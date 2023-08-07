@@ -9,23 +9,24 @@ namespace PoESplit.MarkupTemplates
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (PlayerInformation.fPlayerNameAndLevelKnown)
-            {
-                int areaLevel = System.Convert.ToInt32(values[0]);
-                int playerLevel = System.Convert.ToInt32(values[1]);
+            int areaLevel = System.Convert.ToInt32(values[0]);
+            int playerLevel = System.Convert.ToInt32(values[1]);
 
-                if (areaLevel < playerLevel)
+            if (areaLevel < playerLevel)
+            {
+                return Brushes.Red;
+            }
+            else
+            {
+                ExperiencePenality ep = new ExperiencePenality(playerLevel, areaLevel);
+                if (ep.Penalized)
                 {
-                    return Brushes.Red;
+                    return Brushes.Yellow;
                 }
                 else
                 {
                     return Brushes.Lime;
                 }
-            }
-            else
-            {
-                return Brushes.White;
             }
         }
 

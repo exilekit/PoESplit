@@ -10,21 +10,25 @@ namespace PoESplit.MarkupTemplates
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (PlayerInformation.fPlayerNameAndLevelKnown)
+            int areaLevel = System.Convert.ToInt32(values[0]);
+            int playerLevel = System.Convert.ToInt32(values[1]);
+
+            int areaXP;
+            int playerLevelXP;
+
+            if (
+                TryGetExperienceForZone(areaLevel, playerLevel, out areaXP) &&
+                TryGetExperienceForZone(playerLevel, playerLevel, out playerLevelXP) &&
+                areaXP != 0 && playerLevelXP != 0)
             {
-                int areaLevel = System.Convert.ToInt32(values[0]);
-                int playerLevel = System.Convert.ToInt32(values[1]);
-
-                //return BakedData.
-
-
-                if (areaLevel < playerLevel)
+                double percent = (double)areaXP / playerLevelXP - 1.0;
+                if (percent >= 0.0)
                 {
-                    return Brushes.Red;
+                    return "+" + percent.ToString("P0");
                 }
                 else
                 {
-                    return Brushes.Lime;
+                    return percent.ToString("P0");
                 }
             }
             else
@@ -36,6 +40,20 @@ namespace PoESplit.MarkupTemplates
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+
+        private static bool TryGetExperienceForZone(int zoneLevel, int playerLevel, out int experience)
+        {
+            if (BakedData.fExperienceForZoneLevel.TryGetValue(zoneLevel, out experience))
+            {
+                ExperiencePenality ep = new ExperiencePenality(playerLevel, zoneLevel);
+                experience = (int)(experience * ep.fXpMultiplier);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
