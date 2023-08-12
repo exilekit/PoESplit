@@ -5,7 +5,7 @@ namespace PoESplit
 {
     public partial class App : Application
     {
-        public const string kVersion = "0.4.0.0";
+        public const string kVersion = "0.4.1.0";
 
         public static string FormatTimeSpanMinimal(TimeSpan ts)
         {
