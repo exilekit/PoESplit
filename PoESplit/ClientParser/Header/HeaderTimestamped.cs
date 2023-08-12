@@ -19,10 +19,12 @@ namespace PoESplit.ClientParser.Header
         {
             Regex regex = new Regex(kRegex, RegexOptions.Multiline);
             Match match = regex.Match(line);
-            if (match.Success)
+
+            DateTime timestamp;            
+            if (match.Success && DateTime.TryParse(match.Groups["timestamp"].Value, out timestamp))
             {
                 return new HeaderTimestamped(
-                    DateTime.Parse(match.Groups["timestamp"].Value),
+                    timestamp,
                     match.Groups["remainder"].Value);
             }
             else
