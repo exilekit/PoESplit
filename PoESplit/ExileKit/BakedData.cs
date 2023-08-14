@@ -84,13 +84,10 @@ namespace PoESplit.ExileKit
 				new MapConnection() { X1 = 75, Y1 = 298, X2 = 164, Y2 = 285 },
 				new MapConnection() { X1 = 230, Y1 = 350, X2 = 406, Y2 = 224 },
 				new MapConnection() { X1 = 406, Y1 = 224, X2 = 720, Y2 = 440 },
-				new MapConnection() { X1 = 406, Y1 = 224, X2 = 230, Y2 = 350 },
 				new MapConnection() { X1 = 406, Y1 = 224, X2 = 687, Y2 = 150 },
 				new MapConnection() { X1 = 406, Y1 = 224, X2 = 326, Y2 = 418 },
 				new MapConnection() { X1 = 406, Y1 = 224, X2 = 340, Y2 = 130 },
 				new MapConnection() { X1 = 720, Y1 = 440, X2 = 660, Y2 = 505 },
-				new MapConnection() { X1 = 720, Y1 = 440, X2 = 406, Y2 = 224 },
-				new MapConnection() { X1 = 660, Y1 = 505, X2 = 720, Y2 = 440 },
 			},
 			new List<MapConnection>()
 			{
@@ -504,23 +501,13 @@ namespace PoESplit.ExileKit
 				},
 				new MapPin()
 				{
-					X = 406, Y = 224, Name = "Oriath Square", IsTown = false, IsWaypoint = true,
-					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_3", Level = 42 }}
+					X = 406, Y = 224, Name = "Oriath Square / The Ruined Square", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_3", Level = 42 }, new MapWorldArea(){ Code = "1_5_3b", Level = 44 }}
 				},
 				new MapPin()
 				{
-					X = 406, Y = 224, Name = "The Ruined Square", IsTown = false, IsWaypoint = true,
-					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_3b", Level = 44 }}
-				},
-				new MapPin()
-				{
-					X = 720, Y = 440, Name = "The Templar Courts", IsTown = false, IsWaypoint = true,
-					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_4", Level = 42 }}
-				},
-				new MapPin()
-				{
-					X = 720, Y = 440, Name = "The Torched Courts", IsTown = false, IsWaypoint = false,
-					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_4b", Level = 44 }}
+					X = 720, Y = 440, Name = "The Templar Courts / The Torched Courts", IsTown = false, IsWaypoint = true,
+					Areas = new MapWorldArea[]{new MapWorldArea(){ Code = "1_5_4", Level = 42 }, new MapWorldArea(){ Code = "1_5_4b", Level = 44 }}
 				},
 				new MapPin()
 				{
