@@ -12,11 +12,11 @@ namespace PoESplit
         /// <summary>[95-99]</summary>
         static double[] kTableOfPenalties = new double[]
         {
-            0.9957,
-            0.9867,
-            0.9644,
-            0.9202,
-            0.8400
+            0.9957 * 0.9390,
+            0.9867 * 0.8969,
+            0.9644 * 0.8425,
+            0.9202 * 0.7797,
+            0.8400 * 0.7143
         };
 
         public ExperiencePenalty(int playerLevel, int areaLevel)
