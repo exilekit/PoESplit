@@ -2,7 +2,6 @@
 using System;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Media;
 
 namespace PoESplit.MarkupTemplates
 {
@@ -46,7 +45,7 @@ namespace PoESplit.MarkupTemplates
         {
             if (BakedData.fExperienceForZoneLevel.TryGetValue(zoneLevel, out experience))
             {
-                ExperiencePenality ep = new ExperiencePenality(playerLevel, zoneLevel);
+                ExperiencePenalty ep = new ExperiencePenalty(playerLevel, zoneLevel);
                 experience = (int)(experience * ep.fXpMultiplier);
                 return true;
             }

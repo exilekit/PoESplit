@@ -36,7 +36,7 @@
                             VerticalAlignment="Center"
                             FontSize="12">
                             <Label.Foreground>
-                                <MultiBinding Converter="{StaticResource PenalityMultiValueConverter}" Mode="OneWay">
+                                <MultiBinding Converter="{StaticResource PenaltyMultiValueConverter}" Mode="OneWay">
                                     <Binding Path="Level"/>
                                     <Binding Path="PlayerLevel" RelativeSource="{RelativeSource AncestorType={x:Type local:MapWindow}, Mode=FindAncestor}" Mode="OneWay"/>
                                 </MultiBinding>
@@ -68,7 +68,7 @@
                             VerticalAlignment="Center"
                             FontSize="12">
                         <Label.Foreground>
-                            <MultiBinding Converter="{StaticResource PenalityMultiValueConverter}" Mode="OneWay">
+                            <MultiBinding Converter="{StaticResource PenaltyMultiValueConverter}" Mode="OneWay">
                                 <Binding Path="Level"/>
                                 <Binding Path="PlayerLevel" RelativeSource="{RelativeSource AncestorType={x:Type local:MapWindow}, Mode=FindAncestor}" Mode="OneWay"/>
                             </MultiBinding>

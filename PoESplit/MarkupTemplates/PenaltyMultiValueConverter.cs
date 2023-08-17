@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace PoESplit.MarkupTemplates
 {
-    class PenalityMultiValueConverter : IMultiValueConverter
+    class PenaltyMultiValueConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -18,7 +18,7 @@ namespace PoESplit.MarkupTemplates
             }
             else
             {
-                ExperiencePenality ep = new ExperiencePenality(playerLevel, areaLevel);
+                ExperiencePenalty ep = new ExperiencePenalty(playerLevel, areaLevel);
                 if (ep.Penalized)
                 {
                     return Brushes.Yellow;

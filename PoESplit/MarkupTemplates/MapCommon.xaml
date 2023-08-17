@@ -7,7 +7,7 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <mt:CenteringMultiValueConverter x:Key="CenteringMultiValueConverter"/>
     <mt:MarginMultiValueConverter x:Key="MarginMultiValueConverter"/>
-    <mt:PenalityMultiValueConverter x:Key="PenalityMultiValueConverter"/>
+    <mt:PenaltyMultiValueConverter x:Key="PenaltyMultiValueConverter"/>
     <mt:BonusExperienceMultiValueConverter x:Key="BonusExperienceMultiValueConverter"/>
     <BitmapImage x:Key="WorldPanelVisitedPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelVisitedPinIcon.png"/>
     <BitmapImage x:Key="WorldPanelTownPinIcon" UriSource="/PoESplit;component/ExileKit/WorldPanelTownPinIcon.png"/>

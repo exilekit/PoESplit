@@ -2,37 +2,15 @@
 
 namespace PoESplit
 {
-    struct ExperiencePenality
+    struct ExperiencePenalty
     {
         public int fSafeZone;
         public double fEffectiveDifference;
         public double fXpMultiplier;
-
-        // https://www.poewiki.net/wiki/Experience
+        
+        // https://exilekit.github.io/ExperiencePenalty.html
         /// <summary>[95-99]</summary>
-        static double[] kTableOfPenalties_PoeWiki = new double[]
-        {
-            1.0 / 1.0650,
-            1.0 / 1.1150,
-            1.0 / 1.1870,
-            1.0 / 1.2825,
-            1.0 / 1.4000
-        };
-
-        // https://www.i-volve.net/jol/poe_xpdrop_en.php
-        /// <summary>[95-99]</summary>
-        static double[] kTableOfPenalties_Volve = new double[]
-        {
-            0.9350,
-            0.8850,
-            0.8125,
-            0.7175,
-            0.6000
-        };
-
-        // fyregrass https://www.youtube.com/watch?v=ZRqZHH4pskI
-        /// <summary>[95-99]</summary>
-        static double[] kTableOfPenalties_Fyregrass = new double[]
+        static double[] kTableOfPenalties = new double[]
         {
             0.9957,
             0.9867,
@@ -41,7 +19,7 @@ namespace PoESplit
             0.8400
         };
 
-        public ExperiencePenality(int playerLevel, int areaLevel)
+        public ExperiencePenalty(int playerLevel, int areaLevel)
         {
             if (playerLevel == 100)
             {
@@ -59,7 +37,7 @@ namespace PoESplit
                 if (playerLevel >= 95)
                 {
                     fXpMultiplier *= (1.0 / (1.0 + 0.1 * (playerLevel - 94.0)));
-                    fXpMultiplier *= kTableOfPenalties_Fyregrass[playerLevel - 95];
+                    fXpMultiplier *= kTableOfPenalties[playerLevel - 95];
                 }
                 fXpMultiplier = Math.Max(0.01, fXpMultiplier);
             }
@@ -77,7 +55,15 @@ namespace PoESplit
             }
         }
 
-        public bool Penalized { get { return fEffectiveDifference != 0; } }
+        public bool Penalized 
+        { 
+            get 
+            {
+                const double kApproximatelyZero = 1.0 / 1_000_000;
+
+                return fEffectiveDifference > kApproximatelyZero; 
+            } 
+        }
 
         public override string ToString()
         {
